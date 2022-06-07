@@ -28,13 +28,13 @@ Here is the sctructure of the AlphaMix+.
 
 ### Example
 Here we use the sz50 dataset as an example to show you how we can use it.
-We can directly open the `sunrise_pm_sz50.py` under `PM`.You can dierctly run it or run it on the `bash` using 
+We can directly open the [`sunrise_pm_sz50.py`](https://github.com/ai-gamer/PRUDEX-Compass/blob/main/AlphaMix%2B/PM/sunrise_pm_sz50.py) under [`PM`](https://github.com/ai-gamer/PRUDEX-Compass/tree/main/AlphaMix%2B/PM).You can dierctly run it or run it on the `bash` using 
 ```
 python ./sunrise_pm_sz50.py --dataset sz50 --num_layer 4
 ```
 or any paramaters you want to change which is defined in the `parse_args` function.
 
-After traning, it will store the result under `data` whose structure is like
+After traning, it will store the result under [`data`](https://github.com/ai-gamer/PRUDEX-Compass/tree/main/AlphaMix%2B/PM/data) whose structure is like
 ```
 |-- crypto
 |-- foreign_exchange
@@ -58,9 +58,9 @@ After traning, it will store the result under `data` whose structure is like
 |-- sz50
 
 ```
-Under the `portfolio_management/sunrise-pm`, we can get the the name of our dataset under which lies the the name of model indicating its super-parameters under which lies the result for different seed which contains the overall result on the valid and test dataset in `result.csv` and more specifically, action and daily return for each epoch on the test set in `test_daily_action_(number of epoch).npy` and `test_daily_return_(number of epoch).csv`.
+Under the [`portfolio_management/sunrise-pm`](https://github.com/ai-gamer/PRUDEX-Compass/tree/main/AlphaMix%2B/PM/data/portfolio_management/sunrise-pm), we can get the the name of our dataset under which lies the the name of model indicating its super-parameters under which lies the result for different seed which contains the overall result on the valid and test dataset in [`result.csv`](https://github.com/ai-gamer/PRUDEX-Compass/blob/main/AlphaMix%2B/PM/data/portfolio_management/sunrise-pm/sz50/en_3_batch_256_plr_0.0007_qlr_0.0007_layer_128_2_buffer_10000_discount_0.99_tem_20_bm_0.5_uncertain_0.5/seed_12345/result.csv) and more specifically, action and daily return for each epoch on the test set in [`test_daily_action_(number of epoch).npy`](https://github.com/ai-gamer/PRUDEX-Compass/blob/main/AlphaMix%2B/PM/data/portfolio_management/sunrise-pm/sz50/en_3_batch_256_plr_0.0007_qlr_0.0007_layer_128_2_buffer_10000_discount_0.99_tem_20_bm_0.5_uncertain_0.5/seed_12345/test_daily_action_0.npy) and [`test_daily_return_(number of epoch).csv`](https://github.com/ai-gamer/PRUDEX-Compass/blob/main/AlphaMix%2B/PM/data/portfolio_management/sunrise-pm/sz50/en_3_batch_256_plr_0.0007_qlr_0.0007_layer_128_2_buffer_10000_discount_0.99_tem_20_bm_0.5_uncertain_0.5/seed_12345/test_daily_return_0.csv).
 
-For users to pick the best model, we also add a `sz50.ipynb` in the example which help pick the best model, calculate a series of financial indicators, and summrize the result.
+For users to pick the best model, we also add a [`sz50.ipynb`](https://github.com/ai-gamer/PRUDEX-Compass/blob/main/AlphaMix%2B/PM/data/portfolio_management/sunrise-pm/sz50.ipynb) in the example which help pick the best model, calculate a series of financial indicators, and summrize the result.
 
 ## Compass
 The `PRUDEX-Compass` provides support for 
@@ -77,7 +77,7 @@ And here is the file structure for `Final compass`
 |   |-- main.tex
 
 ```
-Here we provide a blank tex that you can play with, the blank tex does not have any color block but the hexagon and the outer ring, while the example tex generate the picture shown above. we can use the main.tex to see it. You can also alter the config or the colors of the compass.
+Here we provide a [blank tex](https://github.com/ai-gamer/PRUDEX-Compass/blob/main/Compass/generate/Finall%20compass/blank.tex) that you can play with, the blank tex does not have any color block but the hexagon and the outer ring, while the [example tex](https://github.com/ai-gamer/PRUDEX-Compass/blob/main/Compass/generate/Finall%20compass/example.tex) generate the picture shown above. we can use the [main.tex](https://github.com/ai-gamer/PRUDEX-Compass/blob/main/Compass/generate/Finall%20compass/main.tex) to see it. You can also alter the config or the colors of the compass.
 
 - A octagon to evaluate profitability,risk-control and diversity
 <div align="center">
@@ -95,7 +95,7 @@ And here is the file structure for `octagon`
     |-- SARL.tex
     |-- blank.tex
 ```
-Here we provide a blank tex that you can play with, the blank tex does not have any color block but the hexagon and the outer ring, while the rest of tex generate the subpicture corresponding to the  shown above. You can also manipulate the color and the value for different algorithms to generate graphs.
+Here we provide a [blank tex](https://github.com/ai-gamer/PRUDEX-Compass/blob/main/Compass/generate/ocatgon/blank.tex) that you can play with, the blank tex does not have any color block but the hexagon and the outer ring, while the rest of tex generate the subpicture corresponding to the  shown above. You can also manipulate the color and the value for different algorithms to generate graphs.
 
 - A graph discribing the dirstribution of the score of different algorithms
 <div align="center">
@@ -143,7 +143,7 @@ plt.savefig("./distribution.pdf",bbox_inches = 'tight')
 ```
 to generate the distribution. Notice that we only use one dicator (total return in the example) to demonstrate the graph, which is a little different from what we have next(rank information).
 
-For more precise informatino, please refer to `Compass/generate/distribution/distribution.py`
+For more precise informatino, please refer to [`Compass/generate/distribution/distribution.py`](https://github.com/ai-gamer/PRUDEX-Compass/blob/main/Compass/generate/distribution/distribution.py)
 
 - A graph discribing the rank informatino for different algorithms
 <div align="center">
@@ -259,4 +259,4 @@ plt.savefig("./rank.pdf",bbox_inches = 'tight')
 ```
 to generate the graph.
 
-For more information, please refer to `rank.py`
+For more information, please refer to [`rank.py`](https://github.com/ai-gamer/PRUDEX-Compass/blob/main/Compass/generate/rank/rank.py)
