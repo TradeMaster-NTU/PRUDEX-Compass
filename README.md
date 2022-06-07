@@ -10,11 +10,16 @@ The contribution of PRUDEX-COmpass consists of 2 parts:
 ## Compass
 The `PRUDEX-Compass` provides support for 
 - A systematic evaluation from 6 axes 
-<div align="left">
-  <img src="https://github.com/qinmoelei/PRUDEX-Compass/blob/main/Compass/pictures/Final%20compass.png">
+<div align="center">
+  <img src="https://github.com/qinmoelei/PRUDEX-Compass/blob/main/Compass/pictures/Final%20compass.png" width = 200 height = 200 />
 </div>
 
 - A graph discribing the dirstribution of the score of different algorithms
-
+<div align="center">
+  <img src="https://github.com/qinmoelei/PRUDEX-Compass/blob/main/Compass/pictures/overall.png" width = 300 height = 150 />
+</div>
 
 - A graph discribing the rank informatino for different algorithms
+<div align="center">
+  <img src="https://github.com/qinmoelei/PRUDEX-Compass/blob/main/Compass/pictures/rank.png" width = 300 height = 150 />
+</div>
