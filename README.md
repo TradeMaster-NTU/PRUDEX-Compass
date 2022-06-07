@@ -68,16 +68,17 @@ The `PRUDEX-Compass` provides support for
 <div align="center">
   <img src="https://github.com/qinmoelei/PRUDEX-Compass/blob/main/Compass/pictures/Final%20compass.png" width = 200 height = 200 />
 </div>
-And here is the file structure for `Compass/generate/Final compass`
-```
-a
-```
+
+And here is the file structure for `Final compass`
+
 Here we provide a blank tex that you can play with, the blank tex does not have any color block but the hexagon and the outer ring, while the example tex generate the picture shown above. we can use the main.tex to see it. You can also alter the config or the colors of the compass.
 
 - A octagon to evaluate profitability,risk-control and diversity
 <div align="center">
   <img src="https://github.com/qinmoelei/PRUDEX-Compass/blob/main/Compass/pictures/octagon.PNG" width = 400 height = 200 />
 </div>
+
+Here we provide a blank tex that you can play with, the blank tex does not have any color block but the hexagon and the outer ring, while the rest of tex generate the subpicture corresponding to the  shown above. You can also use the s
 
 - A graph discribing the dirstribution of the score of different algorithms
 <div align="center">
