@@ -8,3 +8,10 @@ The contribution of PRUDEX-COmpass consists of 2 parts:
 
 
 ## Compass
+The `PRUDEX-Compass` provides support for 
+- A systematic evaluation from 6 axes 
+<div align="left">
+  <img src="/home/sunshuo/qml/PRUDEX-Compass/overall.pdf">
+</div>
+
+- A graph discrbing the dirstribution of the +
