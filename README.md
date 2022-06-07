@@ -14,4 +14,7 @@ The `PRUDEX-Compass` provides support for
   <img src="(https://github.com/qinmoelei/PRUDEX-Compass/blob/main/overall.pdf)">
 </div>
 
-- A graph discrbing the dirstribution of the +
+- A graph discribing the dirstribution of the score of different algorithms
+
+
+- A graph discribing the rank informatino for different algorithms
