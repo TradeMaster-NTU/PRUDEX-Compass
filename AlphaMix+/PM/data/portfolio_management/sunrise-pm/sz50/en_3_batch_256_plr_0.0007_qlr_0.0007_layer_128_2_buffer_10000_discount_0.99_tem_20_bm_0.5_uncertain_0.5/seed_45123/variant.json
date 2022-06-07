@@ -1,0 +1,35 @@
+{
+  "algorithm": "SAC",
+  "algorithm_kwargs": {
+    "batch_size": 256,
+    "max_path_length": 5000,
+    "min_num_steps_before_training": 10000,
+    "num_epochs": 10,
+    "num_eval_steps_per_epoch": 1500,
+    "num_expl_steps_per_train_loop": 1500,
+    "num_trains_per_train_loop": 1500,
+    "save_frequency": 0
+  },
+  "ber_mean": 0.5,
+  "buffer_size": 10000,
+  "dataset": "sz50",
+  "env": "portfolio_management",
+  "inference_type": 0.0,
+  "layer_size": 128,
+  "log_dir": "/home/sunshuo/qml/RL_Mix/PM/rlkit/../data/portfolio_management/sunrise-pm/sz50/en_3_batch_256_plr_0.0007_qlr_0.0007_layer_128_2_buffer_10000_discount_0.99_tem_20_bm_0.5_uncertain_0.5/seed_34512",
+  "num_ensemble": 3,
+  "num_layer": 2,
+  "seed": 45123,
+  "temperature": 20.0,
+  "trainer_kwargs": {
+    "discount": 0.99,
+    "policy_lr": 0.0007,
+    "qf_lr": 0.0007,
+    "reward_scale": 1,
+    "soft_target_tau": 0.005,
+    "target_update_period": 1,
+    "use_automatic_entropy_tuning": true
+  },
+  "uncertainty": 0.5,
+  "version": "normal"
+}

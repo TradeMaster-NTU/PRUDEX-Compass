@@ -4,7 +4,20 @@ The contribution of PRUDEX-COmpass consists of 2 parts:
 - Introduce PRUDEX-Compass, which has 6 axes, i.e., Profitability, Risk-control, Universality, Diversity, rEliability, and eXplainability, with a total of 16 measures for a systematic evaluation
 
 ## AlphaMix+
+AlphaMix+, a universal RL framework with diversified risk-aware Mixture-of-Experts(MoE) for quantitative trading.
 
+We implement it through using and here is how you can choose your dataset and tune the parameters, train valid and test.
+Here is the sctructure of the AlphaMix+.
+```
+
+```
+
+### Example
+Here we use the sz50 dataset as an example to show you how we can use it.
+
+
+
+We can directly open the `sunrise_pm_sz50.py` under `PM`. 
 
 
 ## Compass
