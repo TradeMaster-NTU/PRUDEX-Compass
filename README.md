@@ -77,7 +77,7 @@ And here is the file structure for `Final compass`
 |   |-- main.tex
 
 ```
-Here we provide a blank tex that you can play with, the blank tex does not have any color block but the hexagon and the outer ring, while the example tex generate the picture shown above. we can use the main.tex to see it. You can also alter the config or the colors of the compass.
+Here we provide a [blank tex](https://github.com/ai-gamer/PRUDEX-Compass/blob/main/Compass/generate/Finall%20compass/blank.tex) that you can play with, the blank tex does not have any color block but the hexagon and the outer ring, while the [example tex](https://github.com/ai-gamer/PRUDEX-Compass/blob/main/Compass/generate/Finall%20compass/example.tex) generate the picture shown above. we can use the [main.tex](https://github.com/ai-gamer/PRUDEX-Compass/blob/main/Compass/generate/Finall%20compass/main.tex) to see it. You can also alter the config or the colors of the compass.
 
 - A octagon to evaluate profitability,risk-control and diversity
 <div align="center">
@@ -95,7 +95,7 @@ And here is the file structure for `octagon`
     |-- SARL.tex
     |-- blank.tex
 ```
-Here we provide a blank tex that you can play with, the blank tex does not have any color block but the hexagon and the outer ring, while the rest of tex generate the subpicture corresponding to the  shown above. You can also manipulate the color and the value for different algorithms to generate graphs.
+Here we provide a [blank tex](https://github.com/ai-gamer/PRUDEX-Compass/blob/main/Compass/generate/ocatgon/blank.tex) that you can play with, the blank tex does not have any color block but the hexagon and the outer ring, while the rest of tex generate the subpicture corresponding to the  shown above. You can also manipulate the color and the value for different algorithms to generate graphs.
 
 - A graph discribing the dirstribution of the score of different algorithms
 <div align="center">
@@ -143,7 +143,7 @@ plt.savefig("./distribution.pdf",bbox_inches = 'tight')
 ```
 to generate the distribution. Notice that we only use one dicator (total return in the example) to demonstrate the graph, which is a little different from what we have next(rank information).
 
-For more precise informatino, please refer to `Compass/generate/distribution/distribution.py`
+For more precise informatino, please refer to [`Compass/generate/distribution/distribution.py`](https://github.com/ai-gamer/PRUDEX-Compass/blob/main/Compass/generate/distribution/distribution.py)
 
 - A graph discribing the rank informatino for different algorithms
 <div align="center">
@@ -259,4 +259,4 @@ plt.savefig("./rank.pdf",bbox_inches = 'tight')
 ```
 to generate the graph.
 
-For more information, please refer to `rank.py`
+For more information, please refer to [`rank.py`](https://github.com/ai-gamer/PRUDEX-Compass/blob/main/Compass/generate/rank/rank.py)
