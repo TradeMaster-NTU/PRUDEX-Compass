@@ -58,9 +58,9 @@ After traning, it will store the result under `data` whose structure is like
 |-- sz50
 
 ```
-under the `portfolio_management/sunrise-pm` we can get the the name of our dataset under which lies the the name of model indicating its super-parameters under which lies the result for different seed which contains the overall result on the valid and test dataset in `result.csv` and more specifically, action and daily return for each epoch on the test set in `test_daily_action_(number of epoch).npy` and `test_daily_return_(number of epoch).csv`.
+Under the `portfolio_management/sunrise-pm`, we can get the the name of our dataset under which lies the the name of model indicating its super-parameters under which lies the result for different seed which contains the overall result on the valid and test dataset in `result.csv` and more specifically, action and daily return for each epoch on the test set in `test_daily_action_(number of epoch).npy` and `test_daily_return_(number of epoch).csv`.
 
-For user to pick the best model, we also add a `sz50.ipynb` in the example which help pick the best model, calculate a series of financial indicators, and summrize the result.
+For users to pick the best model, we also add a `sz50.ipynb` in the example which help pick the best model, calculate a series of financial indicators, and summrize the result.
 
 ## Compass
 The `PRUDEX-Compass` provides support for 
@@ -68,6 +68,11 @@ The `PRUDEX-Compass` provides support for
 <div align="center">
   <img src="https://github.com/qinmoelei/PRUDEX-Compass/blob/main/Compass/pictures/Final%20compass.png" width = 200 height = 200 />
 </div>
+And here is the file structure for `Compass/generate/Final compass`
+```
+a
+```
+Here we provide a blank tex that you can play with, the blank tex does not have any color block but the hexagon and the outer ring, while the example tex generate the picture shown above. we can use the main.tex to see it. You can also alter the config or the colors of the compass.
 
 - A octagon to evaluate profitability,risk-control and diversity
 <div align="center">
