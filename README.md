@@ -14,6 +14,11 @@ The `PRUDEX-Compass` provides support for
   <img src="https://github.com/qinmoelei/PRUDEX-Compass/blob/main/Compass/pictures/Final%20compass.png" width = 200 height = 200 />
 </div>
 
+- A octagon to evaluate profitability,risk-control and diversity
+<div align="center">
+  <img src="https://github.com/qinmoelei/PRUDEX-Compass/blob/main/Compass/pictures/rank.png" width = 300 height = 200 />
+</div>
+
 - A graph discribing the dirstribution of the score of different algorithms
 <div align="center">
   <img src="https://github.com/qinmoelei/PRUDEX-Compass/blob/main/Compass/pictures/overall.png" width = 300 height = 150 />
