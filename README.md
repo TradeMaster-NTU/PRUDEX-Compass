@@ -5,9 +5,10 @@ The contribution of PRUDEX-COmpass consists of 2 parts:
 ## Compass
 The `PRUDEX-Compass` provides support for 
 - A systematic evaluation from 6 axes 
-<div align="center">
+<!-- <div align="center">
   <img src="https://github.com/ai-gamer/PRUDEX-Compass/blob/main/Compass/pictures/Final%20compass.pdf" width = 400 height = 400 />
-</div>
+</div> -->
+![Image Title](https://github.com/ai-gamer/PRUDEX-Compass/blob/main/Compass/pictures/Final%20compass.pdf){width=65%}
 
 And here is the file structure for `Final compass`
 ```
