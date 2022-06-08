@@ -6,7 +6,7 @@ The contribution of PRUDEX-COmpass consists of 2 parts:
 The `PRUDEX-Compass` provides support for 
 - A systematic evaluation from 6 axes 
 <div align="center">
-  <img src="https://github.com/qinmoelei/PRUDEX-Compass/blob/main/Compass/pictures/Final%20compass.png" width = 200 height = 200 />
+  <img src="https://github.com/ai-gamer/PRUDEX-Compass/blob/main/Compass/pictures/Final%20compass.pdf" width = 400 height = 400 />
 </div>
 
 And here is the file structure for `Final compass`
@@ -21,7 +21,7 @@ Here we provide a [blank tex](https://github.com/ai-gamer/PRUDEX-Compass/blob/ma
 
 - A octagon to evaluate profitability,risk-control and diversity
 <div align="center">
-  <img src="https://github.com/qinmoelei/PRUDEX-Compass/blob/main/Compass/pictures/octagon.PNG" width = 400 height = 200 />
+  <img src="https://github.com/qinmoelei/PRUDEX-Compass/blob/main/Compass/pictures/octagon.PNG" width = 500 height = 250 />
 </div>
 
 And here is the file structure for `octagon`
@@ -39,7 +39,7 @@ Here we provide a [blank tex](https://github.com/ai-gamer/PRUDEX-Compass/blob/ma
 
 - A graph discribing the dirstribution of the score of different algorithms
 <div align="center">
-  <img src="https://github.com/qinmoelei/PRUDEX-Compass/blob/main/Compass/pictures/overall.png" width = 300 height = 150 />
+  <img src="https://github.com/ai-gamer/PRUDEX-Compass/blob/main/Compass/pictures/overall.pdf" width = 550 height = 270 />
 </div>
 
 The key is to generate a dictionary whose key is the name of algorithms and the value is 2d array which represents different seeds and different task, then with the dictionary naming `overall_dict`, we can simpily use the code
@@ -87,7 +87,7 @@ For more precise informatino, please refer to [`Compass/generate/distribution/di
 
 - A graph discribing the rank informatino for different algorithms
 <div align="center">
-  <img src="https://github.com/qinmoelei/PRUDEX-Compass/blob/main/Compass/pictures/rank.png" width = 300 height = 150 />
+  <img src="https://github.com/ai-gamer/PRUDEX-Compass/blob/main/Compass/pictures/rank.pdf" width = 550 height = 270 />
 </div> 
 
 The key is to generate a dictionary whose key is the name of indicator and the value is dictionary similar to what we have in the distribution. Then we can simpliy use the code
