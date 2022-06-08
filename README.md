@@ -206,7 +206,7 @@ For more information, please refer to [`rank.py`](https://github.com/ai-gamer/PR
 ## AlphaMix+
 AlphaMix+, a universal RL framework with diversified risk-aware Mixture-of-Experts(MoE) for quantitative trading.
 
-We implement it through using and here is how you can choose your dataset and tune the parameters, train valid and test.
+We implement it through using RLkit and here is how you can choose your dataset and tune the parameters, train valid and test.
 Here is the sctructure of the AlphaMix+.
 ```
 -- PM
