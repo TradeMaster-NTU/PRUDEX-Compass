@@ -8,7 +8,8 @@ The `PRUDEX-Compass` provides support for
 <!-- <div align="center">
   <img src="https://github.com/ai-gamer/PRUDEX-Compass/blob/main/Compass/pictures/Final%20compass.pdf" width = 400 height = 400 />
 </div> -->
-![Image Title](https://github.com/ai-gamer/PRUDEX-Compass/blob/main/Compass/pictures/Final%20compass.pdf){width=65%}
+<!-- ![Image Title](https://github.com/ai-gamer/PRUDEX-Compass/blob/main/Compass/pictures/Final%20compass.pdf){width=65%} -->
+<img src="https://github.com/ai-gamer/PRUDEX-Compass/blob/main/Compass/pictures/Final%20compass.pdf" alt="some text" width="4200" height="4200">
 
 And here is the file structure for `Final compass`
 ```
