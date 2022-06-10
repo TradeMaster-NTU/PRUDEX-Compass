@@ -1,12 +1,15 @@
 # PRUDEX-Compass
-The contribution of PRUDEX-COmpass consists of 2 parts: 
-- Propose AlphaMix+ as a strong FinRL baseline, which leverages Mixture-of-Experts (MoE) and risk-sensitive approaches to make diversified risk-aware investment decisions
-- Introduce PRUDEX-Compass, which has 6 axes, i.e., Profitability, Risk-control, Universality, Diversity, rEliability, and eXplainability, with a total of 16 measures for a systematic evaluation
+PRUDEX-Compass is the first attempt to create a systematic evaluation
+of reinforcement learning in financial markets.
+
+It has 6 axes with a total of 16 measures for systematic evaluation of FinRL methods.
+
+Moreover, this repositories also includes the intergrated result on 4 datasets, including one novel method: AlphaMix+, a strong FinRL baseline which leverages Mixture-of-Experts (MoE) and risk-sensitive approaches to make diversified risk-aware investment decisions.
 ## Compass
 The `PRUDEX-Compass` provides support for 
 - A systematic evaluation from 6 axes 
 <div align="center">
-  <img src="https://github.com/ai-gamer/PRUDEX-Compass/blob/main/Compass/pictures/Final%20compass.png" width = 400 height = 400 />
+  <img src="Compass/pictures/Final-compass.svg" width = 400 height = 400 />
 </div>
 <!-- ![Image Title](https://github.com/ai-gamer/PRUDEX-Compass/blob/main/Compass/pictures/Final%20compass.pdf){width=65%} -->
 
@@ -116,12 +119,9 @@ def get_rank_matrix(score_dict, n=100000, algorithms=None):
   num_algs, _, num_tasks = X.shape
   all_mat = []
   for task in range(num_tasks):
-    # Sort based on negative scores as rank 0 corresponds to minimum value,
-    # rank 1 corresponds to second minimum value when using lexsort.
+    
     task_x = -X[:, :, task]
-    # This is done to randomly break ties.
     rand_x = np.random.random(size=task_x.shape)
-    # Last key is the primary key, 
     indices = np.lexsort((rand_x, task_x), axis=0)
     mat = np.zeros((num_algs, num_algs))
     for rank in range(num_algs):
@@ -139,56 +139,33 @@ for key in ['tr','sr','sor','cr']:
   mean_ranks_all[key] = np.mean(all_ranks, axis=0)
   all_ranks_individual[key] = all_ranks
 colors =['moccasin','aquamarine','#dbc2ec','salmon','lightskyblue','pink','orange']
-
 algs = ['A2C','PPO','SAC','SARL','DeepTrader',"AlphaMix+"]
 color_idxs = [0, 1,2,3,4,5,6]
 DMC_COLOR_DICT = dict(zip(algs, [colors[idx] for idx in color_idxs]))
-#@title Plot aggregate ranks
-
 keys = algs
 labels = list(range(1, len(keys)+1))
-width = 1.0       # the width of the bars: can also be len(x) sequence
-
-# fig, axes = plt.subplots(ncols=2, figsize=(2.9 * 2, 3.6))
+width = 1.0      
 fig, axes = plt.subplots(nrows=1,ncols=4, figsize=(8, 2 * 2))
-
-
-
 for main_idx, main_key in enumerate(['tr','sr','sor','cr']):
-  # print(main_idx)
   ax = axes[main_idx]
   mean_ranks = mean_ranks_all[main_key]
-  # print(mean_ranks_all)
   bottom = np.zeros_like(mean_ranks[0])
   for i, key in enumerate(algs):
     label = key if main_idx == 0 else None
-    # print(label)
     ax.bar(labels, mean_ranks[i], width, label=label, 
           color=DMC_COLOR_DICT[key], bottom=bottom, alpha=0.9)
     bottom += mean_ranks[i]
-
   yticks = np.array(range(0, 101, 20))
   ax.set_yticklabels(yticks, size='large')
-  # if main_idx == 0:
-  #   ax.set_ylabel('Fraction (in %)', size='x-large')
-  #   yticks = np.array(range(0, 101, 20))
-  #   ax.set_yticklabels(yticks, size='large')
-  # else:
-  #   ax.set_yticklabels([])
-  # if main_idx==0:
-  #   ax.set_yticks(yticks * 0.01)
-  # ax.set_xlabel('Ranking', size='x-large')
   if main_idx in [0,1,2,3,4]:
     ax.set_xticks(labels)
   else:
     ax.set_xticks([])
-  #ax.set_xticklabels(labels, size='large')
   ax.set_title(main_key, size='x-large', y=0.95)
   ax.spines['top'].set_visible(False)
   ax.spines['right'].set_visible(False)
   ax.spines['bottom'].set_visible(False)
   ax.spines['left'].set_visible(False)
-  # left = True if main_idx == 0 else False
   left= True
   ax.tick_params(axis='both', which='both', bottom=False, top=False,
                   left=left, right=False, labeltop=False,
