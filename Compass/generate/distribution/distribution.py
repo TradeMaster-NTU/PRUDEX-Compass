@@ -65,7 +65,6 @@ def sr(ret_lst):
     mean = np.mean(ret_lst)
     std = np.std(ret_lst)
     return mean/std * np.sqrt(len(ret_lst))  
-# above is the function we use to calculate the finicial indicator using daily return rate
 
 crypto_return=pd.read_csv("./crypto2021.csv",index_col=0)[["TR"]]
 crypto_return1=pd.read_csv("./crypto2020.csv",index_col=0)[["TR"]]
@@ -73,7 +72,6 @@ crypto_return2=pd.read_csv("./crypto2019.csv",index_col=0)[["TR"]]
 crypto_average_return=(crypto_return.iloc[-1].values)*0.01
 crypto_average_return1=(crypto_return1.iloc[-1].values)*0.01
 crypto_average_return2=(crypto_return2.iloc[-1].values)*0.01
-#above is the average policy(buy all the portfolio evenly's total return rate) and change it from percentage form
 
 tt_dict_crypto={}
 for x in ['a2c','ddpg','pg','ppo','sac']:
@@ -298,34 +296,28 @@ xlabels = ['A2C','PPO','SAC','SARL','DeepTrader',"AlphaMix+"]
 color_idxs = [0, 1,2,3,4,5,6]
 ATARI_100K_COLOR_DICT = dict(zip(xlabels, [colors[idx] for idx in color_idxs]))
 from scipy.stats.stats import find_repeats
-#@title Calculate score distributions and average score distributions for for Atari 100k
-
+xlabel=r'total return score $(\tau)$',
+dict=tt_dict_crypto
 algorithms = ['A2C','PPO','SAC','SARL','DeepTrader',"AlphaMix+"]
-
-score_dict = {key: tt_dict_crypto[key][:] for key in algorithms}
-ATARI_100K_TAU = np.linspace(-1, 100,1000)
-# Higher value of reps corresponds to more accurate estimates but are slower
-# to computed. `reps` corresponds to number of bootstrap resamples.
-reps = 2000
-
-score_distributions, score_distributions_cis = rly.create_performance_profile(
+def make_distribution_plot(dict,algorithms,reps,xlabel,dic,color):
+  score_dict = {key: dict[key][:] for key in algorithms}
+  ATARI_100K_TAU = np.linspace(-1, 100,1000)
+  score_distributions, score_distributions_cis = rly.create_performance_profile(
     score_dict, ATARI_100K_TAU, reps=reps)
-
-fig, ax = plt.subplots(ncols=1, figsize=(8.0, 4.0))
-
-plot_utils.plot_performance_profiles(
+  fig, ax = plt.subplots(ncols=1, figsize=(8.0, 4.0))
+  plot_utils.plot_performance_profiles(
   score_distributions, ATARI_100K_TAU,
   performance_profile_cis=score_distributions_cis,
-  colors=ATARI_100K_COLOR_DICT,
-  xlabel=r'total return score $(\tau)$',
+  colors=color,
+  xlabel=xlabel,
   labelsize='xx-large',
   ax=ax)
-
-ax.axhline(0.5, ls='--', color='k', alpha=0.4)
-fake_patches = [mpatches.Patch(color=ATARI_100K_COLOR_DICT[alg], 
+  ax.axhline(0.5, ls='--', color='k', alpha=0.4)
+  fake_patches = [mpatches.Patch(color=color[alg], 
                                alpha=0.75) for alg in algorithms]
-legend = fig.legend(fake_patches, algorithms, loc='upper center', 
+  legend = fig.legend(fake_patches, algorithms, loc='upper center', 
                     fancybox=True, ncol=len(algorithms), 
                     fontsize='small',
                     bbox_to_anchor=(0.5, 0.9,0,0))
-plt.savefig("./distribution.pdf",bbox_inches = 'tight')
+  plt.savefig(dic,bbox_inches = 'tight')
+make_distribution_plot(dict,algorithms,2000,xlabel,"./distribution",ATARI_100K_COLOR_DICT)

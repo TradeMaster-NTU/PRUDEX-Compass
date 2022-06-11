@@ -33,7 +33,7 @@ Here we provide a [blank tex](https://github.com/ai-gamer/PRUDEX-Compass/blob/ma
         <td ><center><img src="Compass/pictures/octagon/SAC.svg" width = 220 height = 220 /> </center></td>
     </tr>
     <tr>
-     <td align="center"><center>(a)A2C</center></td><td align="center"><center>(b)PPO</center></td>      <td align="center"><center>(c)SAC</center></td>                   
+     <td align="center"><center>(a) A2C</center></td><td align="center"><center>(b) PPO</center></td>      <td align="center"><center>(c) SAC</center></td>                   
     </tr>
     <tr>
         <td ><center><img src="Compass/pictures/octagon/SARL.svg" width = 220 height = 220 /> </center></td>
@@ -41,7 +41,7 @@ Here we provide a [blank tex](https://github.com/ai-gamer/PRUDEX-Compass/blob/ma
         <td ><center><img src="Compass/pictures/octagon/AlphaMix.svg" width = 220 height = 220 />  </center></td>
     </tr>
     <tr>
-     <td align="center"><center>(d)SARL</center></td><td align="center"><center>(e)DeepTrader</center></td>      <td align="center"><center>(f)AlphaMix+</center></td>                   
+     <td align="center"><center>(d) SARL</center></td><td align="center"><center>(e) DeepTrader</center></td>      <td align="center"><center>(f) AlphaMix+</center></td>                   
     </tr>
 </table>
 
@@ -68,42 +68,28 @@ Here we provide a [blank tex](https://github.com/ai-gamer/PRUDEX-Compass/blob/ma
 
 The key is to generate a dictionary whose key is the name of algorithms and the value is 2d array which represents different seeds and different task, then with the dictionary naming `overall_dict`, we can simpily use the code
 ```
+import numpy as np
+import pandas as pd
+import matplotlib.pyplot as plt
+import scipy.stats
+from rliable import library as rly
+from rliable import metrics
+from rliable import plot_utils
+import seaborn as sns
+sns.set_style("white")
+import matplotlib.patches as mpatches
+import collections
+import os
+from Compass.distribution.distribution import make_distribution_plot
 colors = ['moccasin','aquamarine','#dbc2ec','orchid','lightskyblue','pink','orange']
 xlabels = ['A2C','PPO','SAC','SARL','DeepTrader',"AlphaMix+"]
 color_idxs = [0, 1,2,3,4,5,6]
 ATARI_100K_COLOR_DICT = dict(zip(xlabels, [colors[idx] for idx in color_idxs]))
 from scipy.stats.stats import find_repeats
-#@title Calculate score distributions and average score distributions for for Atari 100k
-
+xlabel=r'total return score $(\tau)$',
+dict=tt_dict_crypto
 algorithms = ['A2C','PPO','SAC','SARL','DeepTrader',"AlphaMix+"]
-
-score_dict = {key: overall_dict[key][:] for key in algorithms}
-ATARI_100K_TAU = np.linspace(-1, 100,1000)
-# Higher value of reps corresponds to more accurate estimates but are slower
-# to computed. `reps` corresponds to number of bootstrap resamples.
-reps = 2000
-
-score_distributions, score_distributions_cis = rly.create_performance_profile(
-    score_dict, ATARI_100K_TAU, reps=reps)
-
-fig, ax = plt.subplots(ncols=1, figsize=(8.0, 4.0))
-
-plot_utils.plot_performance_profiles(
-  score_distributions, ATARI_100K_TAU,
-  performance_profile_cis=score_distributions_cis,
-  colors=ATARI_100K_COLOR_DICT,
-  xlabel=r'total return score $(\tau)$',
-  labelsize='xx-large',
-  ax=ax)
-
-ax.axhline(0.5, ls='--', color='k', alpha=0.4)
-fake_patches = [mpatches.Patch(color=ATARI_100K_COLOR_DICT[alg], 
-                               alpha=0.75) for alg in algorithms]
-legend = fig.legend(fake_patches, algorithms, loc='upper center', 
-                    fancybox=True, ncol=len(algorithms), 
-                    fontsize='small',
-                    bbox_to_anchor=(0.5, 0.9,0,0))
-plt.savefig("./distribution.pdf",bbox_inches = 'tight')
+make_distribution_plot(dict,algorithms,2000,xlabel,"./distribution",ATARI_100K_COLOR_DICT)
 ```
 to generate the distribution. Notice that we only use one dicator (total return in the example) to demonstrate the graph, which is a little different from what we have next(rank information).
 
