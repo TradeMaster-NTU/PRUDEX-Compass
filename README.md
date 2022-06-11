@@ -36,9 +36,12 @@ Here we provide a [blank tex](https://github.com/ai-gamer/PRUDEX-Compass/blob/ma
      <td align="center"><center>(a)A2C</center></td><td align="center"><center>(b)PPO</center></td>      <td align="center"><center>(c)SAC</center></td>                   
     </tr>
     <tr>
-        <td ><center><img src="Compass/pictures/octagon/SARL.svg" width = 220 height = 220 />                                (d)SARL </center></td>
-        <td ><center><img src="Compass/pictures/octagon/DeepTrader.svg" width = 220 height = 220 />                                (e)DeepTrader </center></td>
-        <td ><center><img src="Compass/pictures/octagon/AlphaMix.svg" width = 220 height = 220 />                                (f)AlphaMix+ </center></td>
+        <td ><center><img src="Compass/pictures/octagon/SARL.svg" width = 220 height = 220 /> </center></td>
+        <td ><center><img src="Compass/pictures/octagon/DeepTrader.svg" width = 220 height = 220 /> </center></td>
+        <td ><center><img src="Compass/pictures/octagon/AlphaMix.svg" width = 220 height = 220 />  </center></td>
+    </tr>
+    <tr>
+     <td align="center"><center>(d)SARL</center></td><td align="center"><center>(e)DeepTrader</center></td>      <td align="center"><center>(f)AlphaMix+</center></td>                   
     </tr>
 </table>
 
