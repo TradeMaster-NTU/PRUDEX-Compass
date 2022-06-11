@@ -28,14 +28,14 @@ Here we provide a [blank tex](https://github.com/ai-gamer/PRUDEX-Compass/blob/ma
 - A octagon to evaluate profitability,risk-control and diversity
 <table>
     <tr>
-        <td ><center><img src="Compass/pictures/octagon/A2C.svg" width = 220 height = 220 />  (a)A2C </center></td>
-        <td ><center><img src="Compass/pictures/octagon/PPO.svg" width = 220 height = 220 />  (b)PPO </center></td>
-        <td ><center><img src="Compass/pictures/octagon/SAC.svg" width = 220 height = 220 />  (c)SAC </center></td>
+        <td ><center><img src="Compass/pictures/octagon/A2C.svg" width = 220 height = 220 />  (a)  A2C </center></td>
+        <td ><center><img src="Compass/pictures/octagon/PPO.svg" width = 220 height = 220 />  (b)  PPO </center></td>
+        <td ><center><img src="Compass/pictures/octagon/SAC.svg" width = 220 height = 220 />  (c)  SAC </center></td>
     </tr>
     <tr>
-        <td ><center><img src="Compass/pictures/octagon/SARL.svg" width = 220 height = 220 />  (d)SARL </center></td>
-        <td ><center><img src="Compass/pictures/octagon/DeepTrader.svg" width = 220 height = 220 />  (e)DeepTrader </center></td>
-        <td ><center><img src="Compass/pictures/octagon/AlphaMix.svg" width = 220 height = 220 />  (f)AlphaMix+ </center></td>
+        <td ><center><img src="Compass/pictures/octagon/SARL.svg" width = 220 height = 220 />  (d)  SARL </center></td>
+        <td ><center><img src="Compass/pictures/octagon/DeepTrader.svg" width = 220 height = 220 />  (e)  DeepTrader </center></td>
+        <td ><center><img src="Compass/pictures/octagon/AlphaMix.svg" width = 220 height = 220 />  (f)  AlphaMix+ </center></td>
     </tr>
 </table>
 
