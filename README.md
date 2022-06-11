@@ -93,7 +93,7 @@ make_distribution_plot(dict,algorithms,2000,xlabel,"./distribution",ATARI_100K_C
 ```
 to generate the distribution. Notice that we only use one dicator (total return in the example) to demonstrate the graph, which is a little different from what we have next(rank information).
 
-For more precise informatino, please refer to [`Compass/generate/distribution/distribution.py`](https://github.com/ai-gamer/PRUDEX-Compass/blob/main/Compass/generate/distribution/distribution.py)
+For more precise information, please refer to [`Compass/generate/distribution/distribution.py`](https://github.com/ai-gamer/PRUDEX-Compass/blob/main/Compass/generate/distribution/distribution.py)
 
 - A graph discribing the rank informatino for different algorithms
 <div align="center">
