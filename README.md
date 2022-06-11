@@ -26,9 +26,27 @@ And here is the file structure for `Final compass`
 Here we provide a [blank tex](https://github.com/ai-gamer/PRUDEX-Compass/blob/main/Compass/generate/Finall%20compass/blank.tex) that you can play with, the blank tex does not have any color block but the hexagon and the outer ring, while the [example tex](https://github.com/ai-gamer/PRUDEX-Compass/blob/main/Compass/generate/Finall%20compass/example.tex) generate the picture shown above. we can use the [main.tex](https://github.com/ai-gamer/PRUDEX-Compass/blob/main/Compass/generate/Finall%20compass/main.tex) to see it. You can also alter the config or the colors of the compass.
 
 - A octagon to evaluate profitability,risk-control and diversity
-<div align="center">
-  <img src="https://github.com/qinmoelei/PRUDEX-Compass/blob/main/Compass/pictures/octagon.PNG" width = 500 height = 250 />
-</div>
+<table align="center">
+    <tr>
+        <td ><center><img src="Compass/pictures/octagon/A2C.svg" width = 220 height = 220 />   </center></td>
+        <td ><center><img src="Compass/pictures/octagon/PPO.svg" width = 220 height = 220 /> </center></td>
+        <td ><center><img src="Compass/pictures/octagon/SAC.svg" width = 220 height = 220 /> </center></td>
+    </tr>
+    <tr>
+     <td align="center"><center>(a) A2C</center></td><td align="center"><center>(b) PPO</center></td>      <td align="center"><center>(c) SAC</center></td>                   
+    </tr>
+    <tr>
+        <td ><center><img src="Compass/pictures/octagon/SARL.svg" width = 220 height = 220 /> </center></td>
+        <td ><center><img src="Compass/pictures/octagon/DeepTrader.svg" width = 220 height = 220 /> </center></td>
+        <td ><center><img src="Compass/pictures/octagon/AlphaMix.svg" width = 220 height = 220 />  </center></td>
+    </tr>
+    <tr>
+     <td align="center"><center>(d) SARL</center></td><td align="center"><center>(e) DeepTrader</center></td>      <td align="center"><center>(f) AlphaMix+</center></td>                   
+    </tr>
+</table>
+
+
+<div STYLE="page-break-after: always;"></div>
 
 And here is the file structure for `octagon`
 ```
@@ -45,137 +63,59 @@ Here we provide a [blank tex](https://github.com/ai-gamer/PRUDEX-Compass/blob/ma
 
 - A graph discribing the dirstribution of the score of different algorithms
 <div align="center">
-  <img src="https://github.com/ai-gamer/PRUDEX-Compass/blob/main/Compass/pictures/overall.png" width = 550 height = 270 />
+  <img src="Compass/pictures/overall.svg" width = 7000 height = 350 />
 </div>
 
 The key is to generate a dictionary whose key is the name of algorithms and the value is 2d array which represents different seeds and different task, then with the dictionary naming `overall_dict`, we can simpily use the code
 ```
+import numpy as np
+import pandas as pd
+import matplotlib.pyplot as plt
+import scipy.stats
+from rliable import library as rly
+from rliable import metrics
+from rliable import plot_utils
+import seaborn as sns
+sns.set_style("white")
+import matplotlib.patches as mpatches
+import collections
+import os
+from Compass.distribution.distribution import make_distribution_plot
 colors = ['moccasin','aquamarine','#dbc2ec','orchid','lightskyblue','pink','orange']
 xlabels = ['A2C','PPO','SAC','SARL','DeepTrader',"AlphaMix+"]
 color_idxs = [0, 1,2,3,4,5,6]
 ATARI_100K_COLOR_DICT = dict(zip(xlabels, [colors[idx] for idx in color_idxs]))
 from scipy.stats.stats import find_repeats
-#@title Calculate score distributions and average score distributions for for Atari 100k
-
+xlabel=r'total return score $(\tau)$',
+dict=tt_dict_crypto
 algorithms = ['A2C','PPO','SAC','SARL','DeepTrader',"AlphaMix+"]
-
-score_dict = {key: overall_dict[key][:] for key in algorithms}
-ATARI_100K_TAU = np.linspace(-1, 100,1000)
-# Higher value of reps corresponds to more accurate estimates but are slower
-# to computed. `reps` corresponds to number of bootstrap resamples.
-reps = 2000
-
-score_distributions, score_distributions_cis = rly.create_performance_profile(
-    score_dict, ATARI_100K_TAU, reps=reps)
-
-fig, ax = plt.subplots(ncols=1, figsize=(8.0, 4.0))
-
-plot_utils.plot_performance_profiles(
-  score_distributions, ATARI_100K_TAU,
-  performance_profile_cis=score_distributions_cis,
-  colors=ATARI_100K_COLOR_DICT,
-  xlabel=r'total return score $(\tau)$',
-  labelsize='xx-large',
-  ax=ax)
-
-ax.axhline(0.5, ls='--', color='k', alpha=0.4)
-fake_patches = [mpatches.Patch(color=ATARI_100K_COLOR_DICT[alg], 
-                               alpha=0.75) for alg in algorithms]
-legend = fig.legend(fake_patches, algorithms, loc='upper center', 
-                    fancybox=True, ncol=len(algorithms), 
-                    fontsize='small',
-                    bbox_to_anchor=(0.5, 0.9,0,0))
-plt.savefig("./distribution.pdf",bbox_inches = 'tight')
+make_distribution_plot(dict,algorithms,2000,xlabel,"./distribution",ATARI_100K_COLOR_DICT)
 ```
 to generate the distribution. Notice that we only use one dicator (total return in the example) to demonstrate the graph, which is a little different from what we have next(rank information).
 
-For more precise informatino, please refer to [`Compass/generate/distribution/distribution.py`](https://github.com/ai-gamer/PRUDEX-Compass/blob/main/Compass/generate/distribution/distribution.py)
+For more precise information, please refer to [`Compass/generate/distribution/distribution.py`](https://github.com/ai-gamer/PRUDEX-Compass/blob/main/Compass/generate/distribution/distribution.py)
 
 - A graph discribing the rank informatino for different algorithms
 <div align="center">
-  <img src="https://github.com/ai-gamer/PRUDEX-Compass/blob/main/Compass/pictures/rank.png" width = 550 height = 270 />
+  <img src="Compass/pictures/rank.svg" width = 60000 height = 350 />
+
 </div> 
+
 
 The key is to generate a dictionary whose key is the name of indicator and the value is dictionary similar to what we have in the distribution. Then we can simpliy use the code
 ```
-def subsample_scores_mat(score_mat, num_samples=3, replace=False):
-  subsampled_dict = []
-  total_samples, num_games = score_mat.shape
-  subsampled_scores = np.empty((num_samples, num_games))
-  for i in range(num_games):
-    indices = np.random.choice(total_samples, size=num_samples, replace=replace)
-    subsampled_scores[:, i] = score_mat[indices, i]
-  return subsampled_scores
-
-def get_rank_matrix(score_dict, n=100000, algorithms=None):
-  arr = []
-  if algorithms is None:
-    algorithms = sorted(score_dict.keys())
-  print(f'Using algorithms: {algorithms}')
-  for alg in algorithms:
-    arr.append(subsample_scores_mat(
-        score_dict[alg], num_samples=n, replace=True))
-  X = np.stack(arr, axis=0)
-  num_algs, _, num_tasks = X.shape
-  all_mat = []
-  for task in range(num_tasks):
-    
-    task_x = -X[:, :, task]
-    rand_x = np.random.random(size=task_x.shape)
-    indices = np.lexsort((rand_x, task_x), axis=0)
-    mat = np.zeros((num_algs, num_algs))
-    for rank in range(num_algs):
-      cnts = collections.Counter(indices[rank])
-      mat[:, rank] = np.array([cnts[i]/n for i in range(num_algs)])
-    all_mat.append(mat)
-  all_mat = np.stack(all_mat, axis=0)
-  return all_mat
-mean_ranks_all = {}
-all_ranks_individual = {}
-for key in ['tr','sr','sor','cr']:
-  dmc_score_dict = dmc_scores[key]
-  algs =  ['A2C','PPO','SAC','SARL','DeepTrader','AlphaMix+']
-  all_ranks = get_rank_matrix(dmc_score_dict, 200000, algorithms=algs)
-  mean_ranks_all[key] = np.mean(all_ranks, axis=0)
-  all_ranks_individual[key] = all_ranks
-colors =['moccasin','aquamarine','#dbc2ec','salmon','lightskyblue','pink','orange']
-algs = ['A2C','PPO','SAC','SARL','DeepTrader',"AlphaMix+"]
-color_idxs = [0, 1,2,3,4,5,6]
-DMC_COLOR_DICT = dict(zip(algs, [colors[idx] for idx in color_idxs]))
-keys = algs
-labels = list(range(1, len(keys)+1))
-width = 1.0      
-fig, axes = plt.subplots(nrows=1,ncols=4, figsize=(8, 2 * 2))
-for main_idx, main_key in enumerate(['tr','sr','sor','cr']):
-  ax = axes[main_idx]
-  mean_ranks = mean_ranks_all[main_key]
-  bottom = np.zeros_like(mean_ranks[0])
-  for i, key in enumerate(algs):
-    label = key if main_idx == 0 else None
-    ax.bar(labels, mean_ranks[i], width, label=label, 
-          color=DMC_COLOR_DICT[key], bottom=bottom, alpha=0.9)
-    bottom += mean_ranks[i]
-  yticks = np.array(range(0, 101, 20))
-  ax.set_yticklabels(yticks, size='large')
-  if main_idx in [0,1,2,3,4]:
-    ax.set_xticks(labels)
-  else:
-    ax.set_xticks([])
-  ax.set_title(main_key, size='x-large', y=0.95)
-  ax.spines['top'].set_visible(False)
-  ax.spines['right'].set_visible(False)
-  ax.spines['bottom'].set_visible(False)
-  ax.spines['left'].set_visible(False)
-  left= True
-  ax.tick_params(axis='both', which='both', bottom=False, top=False,
-                  left=left, right=False, labeltop=False,
-                  labelbottom=True, labelleft=left, labelright=False)
-
-fig.legend(loc='center right', fancybox=True, ncol=1, fontsize='large', bbox_to_anchor=(1.15, 0.35))
-fig.subplots_adjust(top=0.72, wspace=0.5, bottom=0)
-fig.text(x=-0.01, y=0.2, s='Fraction (in %)', rotation=90, size='xx-large')
-# plt.show()
-plt.savefig("./rank.pdf",bbox_inches = 'tight')
+from Compass.generate.rank.rank import subsample_scores_mat,get_rank_matrix,make_rank_plot
+dmc_scores = {}
+dmc_scores["TR"]=tt_dict
+dmc_scores["SR"]=sr_dict
+dmc_scores["CR"]=cr_dict
+dmc_scores["SoR"]=sor_dict
+dmc_scores["VOL"]=vol_dict
+dmc_scores["Entropy"]=Entropy_dict
+indicator_list=['TR','SR','VOL','Entropy']
+algs=['A2C','PPO','SAC','SARL','DeepTrader','AlphaMix+']
+colors=['moccasin','aquamarine','#dbc2ec','salmon','lightskyblue','pink','orange']
+make_rank_plot(algs,indicator_list,".rank.pdf",colors)
 ```
 to generate the graph.
 

@@ -64,113 +64,95 @@ def sr(ret_lst):
     mean = np.mean(ret_lst)
     std = np.std(ret_lst)
     return mean/std * np.sqrt(len(ret_lst))  
-
-tt_dict_sz={}
-vol_dict_sz={}
-mdd_dict_sz={}
-cr_dict_sz={}
-sor_dict_sz={}
-sr_dict_sz={}
-for x in ['a2c','ddpg','pg','ppo','sac']:
-    tts=[]
-    vols=[]
-    mdds=[]
-    crs=[]
-    sors=[]
-    srs=[]
-    for experiment in ["experiment","experiment rolling1","experiment rolling2"]:
-        new_tts=[]
-        new_vols=[]
-        new_mdds=[]
-        new_crs=[]
-        new_sors=[]
-        new_srs=[]
-
-        for i in [12345,23451,34512,45123,51234]:
-            seed_result=np.array(pd.read_csv(os.path.join('./experiment with sz50',x,experiment,'results',x.upper()+' '+'result{}'.format(i)+'.csv'))["daily_return"].tolist())
-            tt_value=tt(seed_result)
-            vol_value=vol(seed_result)
-            mdd_value=mdd(seed_result)
-            cr_value=cr(seed_result)
-            sor_value=sor(seed_result)
-            sr_value=sr(seed_result)
-            new_tts.append(tt_value)
-            new_vols.append(vol_value)
-            new_mdds.append(mdd_value)
-            new_crs.append(cr_value)
-            new_sors.append(sor_value)
-            new_srs.append(sr_value)
-        tts.append(new_tts)
-        vols.append(new_vols)
-        mdds.append(new_mdds)
-        crs.append(new_crs)
-        sors.append(new_sors)
-        srs.append(new_srs)
-
-    tt_dict_sz[x]=np.array(tts)
-    vol_dict_sz[x]=np.array(vols)
-    mdd_dict_sz[x]=np.array(mdds)
-    cr_dict_sz[x]=np.array(crs)
-    sor_dict_sz[x]=np.array(sors)
-    sr_dict_sz[x]=np.array(srs)
-experiment=np.load("./sz50/Mixsz50.npy")
-experiment1=np.load("./sz50/Mixsz501.npy")
-experiment2=np.load("./sz50/Mixsz502.npy")
-tts=[]
-vols=[]
-mdds=[]
-crs=[]
-sors=[]
-srs=[]
-for x in [experiment,experiment1,experiment2]:
-    new_tts=[]
-    new_vols=[]
-    new_mdds=[]
-    new_crs=[]
-    new_sors=[]
-    new_srs=[]
-    for y in x:
-        tt_value=tt(y)
-        vol_value=vol(y)
-        mdd_value=mdd(y)
-        cr_value=cr(y)
-        sor_value=sor(y)
-        sr_value=sr(y)
-        new_tts.append(tt_value)
-        new_vols.append(vol_value)
-        new_mdds.append(mdd_value)
-        new_crs.append(cr_value)
-        new_sors.append(sor_value)
-        new_srs.append(sr_value)
-    tts.append(new_tts)
-    vols.append(new_vols)
-    mdds.append(new_mdds)
-    crs.append(new_crs)
-    sors.append(new_sors)
-    srs.append(new_srs)
-
-tt_dict_sz["RLmix"]=np.array(tts)
-vol_dict_sz["RLmix"]=np.array(vols)
-mdd_dict_sz["RLmix"]=np.array(mdds)
-cr_dict_sz["RLmix"]=np.array(crs)
-sor_dict_sz["RLmix"]=np.array(sors)
-sr_dict_sz["RLmix"]=np.array(srs)
-
-for overall_dict in [tt_dict_sz,sor_dict_sz,cr_dict_sz,sr_dict_sz,vol_dict_sz]:
-    overall_dict['A2C']=overall_dict.pop('a2c')
-    overall_dict['PPO']=overall_dict.pop('ppo')
-    overall_dict['SAC']=overall_dict.pop('sac')
-    overall_dict['SARL']=overall_dict.pop('ddpg')
-    overall_dict['DeepTrader']=overall_dict.pop('pg')
-    overall_dict['AlphaMix+']=overall_dict.pop('RLmix')
 algs = ['A2C','PPO','SAC','SARL','DeepTrader','AlphaMix+']
-dmc_scores = {}
-dmc_scores["tr"]=tt_dict_sz
-dmc_scores["sr"]=sr_dict_sz
-dmc_scores["cr"]=cr_dict_sz
-dmc_scores["sor"]=sor_dict_sz
+Entropy_dict={}
+for a in ["A2C","SARL","DeepTrader","PPO","AlphaMix+","SAC"]:
+    contents=[]
+    for market in ["Crypto","dj30","FX","sz50"]:
+        data1=np.load("./"+a+"/"+market+"/Entropy.npy")
+        data2=np.load("./"+a+"/"+market+"/Entropy1.npy")
+        data3=np.load("./"+a+"/"+market+"/Entropy2.npy")
+        for data in [data1,data2,data3]:
+            contents.append(np.array(data))
+    contents=np.array(contents)
+    Entropy_dict[a]=np.array(contents)
 
-"""the important thing is to construct the dmc_score, which is a dictionary consisting of 4 different dictionary 
+
+tt_dict={}
+for a in ["A2C","SARL","DeepTrader","PPO","AlphaMix+","SAC"]:
+    contents=[]
+    for market in ["Crypto","dj30","FX","sz50"]:
+        data1=np.load("./"+a+"/"+market+"/tt.npy")
+        data2=np.load("./"+a+"/"+market+"/tt1.npy")
+        data3=np.load("./"+a+"/"+market+"/tt2.npy")
+        for data in [data1,data2,data3]:
+            contents.append(np.array(data))
+    contents=np.array(contents)
+    tt_dict[a]=np.array(contents)
+
+sr_dict={}
+for a in ["A2C","SARL","DeepTrader","PPO","AlphaMix+","SAC"]:
+    contents=[]
+    for market in ["Crypto","dj30","FX","sz50"]:
+        data1=np.load("./"+a+"/"+market+"/sr.npy")
+        data2=np.load("./"+a+"/"+market+"/sr1.npy")
+        data3=np.load("./"+a+"/"+market+"/sr2.npy")
+        for data in [data1,data2,data3]:
+            contents.append(np.array(data))
+    contents=np.array(contents)
+    sr_dict[a]=np.array(contents)
+
+
+cr_dict={}
+for a in ["A2C","SARL","DeepTrader","PPO","AlphaMix+","SAC"]:
+    contents=[]
+    for market in ["Crypto","dj30","FX","sz50"]:
+        data1=np.load("./"+a+"/"+market+"/cr.npy")
+        data2=np.load("./"+a+"/"+market+"/cr1.npy")
+        data3=np.load("./"+a+"/"+market+"/cr2.npy")
+        for data in [data1,data2,data3]:
+            contents.append(np.array(data))
+    contents=np.array(contents)
+    cr_dict[a]=np.array(contents)
+
+sor_dict={}
+for a in ["A2C","SARL","DeepTrader","PPO","AlphaMix+","SAC"]:
+    contents=[]
+    for market in ["Crypto","dj30","FX","sz50"]:
+        data1=np.load("./"+a+"/"+market+"/sor.npy")
+        data2=np.load("./"+a+"/"+market+"/sor1.npy")
+        data3=np.load("./"+a+"/"+market+"/sor2.npy")
+        for data in [data1,data2,data3]:
+            contents.append(np.array(data))
+    contents=np.array(contents)
+    sor_dict[a]=np.array(contents)
+
+
+
+vol_dict={}
+for a in ["A2C","SARL","DeepTrader","PPO","AlphaMix+","SAC"]:
+    contents=[]
+    for market in ["Crypto","dj30","FX","sz50"]:
+        data1=np.load("./"+a+"/"+market+"/vol.npy")
+        data2=np.load("./"+a+"/"+market+"/vol1.npy")
+        data3=np.load("./"+a+"/"+market+"/vol2.npy")
+        for data in [data1,data2,data3]:
+            contents.append(np.array(data))
+    contents=np.array(contents)
+    vol_dict[a]=np.array(contents)
+
+
+
+dmc_scores = {}
+dmc_scores["TR"]=tt_dict
+dmc_scores["SR"]=sr_dict
+dmc_scores["CR"]=cr_dict
+dmc_scores["SoR"]=sor_dict
+dmc_scores["VOL"]=vol_dict
+dmc_scores["Entropy"]=Entropy_dict
+
+#notice that we do not show the data in this particular project so you need to replace the position of your own data the data is as following
+"""the important thing is to construct the dmc_score, which is a dictionary consisting of 4 different dictionaries
 it looks something like this
 
 {'TR': {'A2C': array([[ 1.60122609e+00,  1.04696694e-01,  1.46063288e-01,
@@ -204,6 +186,9 @@ it looks something like this
        
 then we can simpliy use the following code to generate the graph
 """
+# here every key in the dictionary represents a indicator's name and the value is a dictionary with the name of the algorithms as key and a 2-dimension np.array as the value
+#(1d for different randomseed and 1d for multiple task here is the time rolling)
+
 def subsample_scores_mat(score_mat, num_samples=3, replace=False):
   subsampled_dict = []
   total_samples, num_games = score_mat.shape
@@ -225,12 +210,8 @@ def get_rank_matrix(score_dict, n=100000, algorithms=None):
   num_algs, _, num_tasks = X.shape
   all_mat = []
   for task in range(num_tasks):
-    # Sort based on negative scores as rank 0 corresponds to minimum value,
-    # rank 1 corresponds to second minimum value when using lexsort.
     task_x = -X[:, :, task]
-    # This is done to randomly break ties.
     rand_x = np.random.random(size=task_x.shape)
-    # Last key is the primary key, 
     indices = np.lexsort((rand_x, task_x), axis=0)
     mat = np.zeros((num_algs, num_algs))
     for rank in range(num_algs):
@@ -239,72 +220,51 @@ def get_rank_matrix(score_dict, n=100000, algorithms=None):
     all_mat.append(mat)
   all_mat = np.stack(all_mat, axis=0)
   return all_mat
-mean_ranks_all = {}
-all_ranks_individual = {}
-for key in ['tr','sr','sor','cr']:
-  dmc_score_dict = dmc_scores[key]
-  algs =  ['A2C','PPO','SAC','SARL','DeepTrader','AlphaMix+']
-  all_ranks = get_rank_matrix(dmc_score_dict, 200000, algorithms=algs)
-  mean_ranks_all[key] = np.mean(all_ranks, axis=0)
-  all_ranks_individual[key] = all_ranks
-colors =['moccasin','aquamarine','#dbc2ec','salmon','lightskyblue','pink','orange']
-
-algs = ['A2C','PPO','SAC','SARL','DeepTrader',"AlphaMix+"]
-color_idxs = [0, 1,2,3,4,5,6]
-DMC_COLOR_DICT = dict(zip(algs, [colors[idx] for idx in color_idxs]))
-#@title Plot aggregate ranks
-
-keys = algs
-labels = list(range(1, len(keys)+1))
-width = 1.0       # the width of the bars: can also be len(x) sequence
-
-# fig, axes = plt.subplots(ncols=2, figsize=(2.9 * 2, 3.6))
-fig, axes = plt.subplots(nrows=1,ncols=4, figsize=(8, 2 * 2))
-
-
-
-for main_idx, main_key in enumerate(['tr','sr','sor','cr']):
-  # print(main_idx)
-  ax = axes[main_idx]
-  mean_ranks = mean_ranks_all[main_key]
-  # print(mean_ranks_all)
-  bottom = np.zeros_like(mean_ranks[0])
-  for i, key in enumerate(algs):
-    label = key if main_idx == 0 else None
-    # print(label)
-    ax.bar(labels, mean_ranks[i], width, label=label, 
-          color=DMC_COLOR_DICT[key], bottom=bottom, alpha=0.9)
-    bottom += mean_ranks[i]
-
-  yticks = np.array(range(0, 101, 20))
-  ax.set_yticklabels(yticks, size='large')
-  # if main_idx == 0:
-  #   ax.set_ylabel('Fraction (in %)', size='x-large')
-  #   yticks = np.array(range(0, 101, 20))
-  #   ax.set_yticklabels(yticks, size='large')
-  # else:
-  #   ax.set_yticklabels([])
-  # if main_idx==0:
-  #   ax.set_yticks(yticks * 0.01)
-  # ax.set_xlabel('Ranking', size='x-large')
-  if main_idx in [0,1,2,3,4]:
-    ax.set_xticks(labels)
-  else:
-    ax.set_xticks([])
-  #ax.set_xticklabels(labels, size='large')
-  ax.set_title(main_key, size='x-large', y=0.95)
-  ax.spines['top'].set_visible(False)
-  ax.spines['right'].set_visible(False)
-  ax.spines['bottom'].set_visible(False)
-  ax.spines['left'].set_visible(False)
-  # left = True if main_idx == 0 else False
-  left= True
-  ax.tick_params(axis='both', which='both', bottom=False, top=False,
+indicator_list=['TR','SR','VOL','Entropy']
+algs=['A2C','PPO','SAC','SARL','DeepTrader','AlphaMix+']
+colors=['moccasin','aquamarine','#dbc2ec','salmon','lightskyblue','pink','orange']
+def make_rank_plot(algs,indicator_list,dict,colors):
+  mean_ranks_all = {}
+  all_ranks_individual = {}
+  for key in indicator_list:
+    dmc_score_dict = dmc_scores[key]
+    algs =  algs
+    all_ranks = get_rank_matrix(dmc_score_dict, 200000, algorithms=algs)
+    mean_ranks_all[key] = np.mean(all_ranks, axis=0)
+    all_ranks_individual[key] = all_ranks
+  color_idxs = [0, 1,2,3,4,5,6]
+  DMC_COLOR_DICT = dict(zip(algs, [colors[idx] for idx in color_idxs]))
+  keys = algs
+  labels = list(range(1, len(keys)+1))
+  width = 1.0      
+  fig, axes = plt.subplots(nrows=1,ncols=len(indicator_list), figsize=(8, 2 * 2))
+  for main_idx, main_key in enumerate(indicator_list):
+    ax = axes[main_idx]
+    mean_ranks = mean_ranks_all[main_key]
+    bottom = np.zeros_like(mean_ranks[0])
+    for i, key in enumerate(algs):
+      label = key if main_idx == 0 else None
+      ax.bar(labels, mean_ranks[i], width, label=label, 
+            color=DMC_COLOR_DICT[key], bottom=bottom, alpha=0.9)
+      bottom += mean_ranks[i]
+    yticks = np.array(range(0, 101, 20))
+    ax.set_yticklabels(yticks, size='large')
+    if main_idx in list(range(len(indicator_list)+1)):
+      ax.set_xticks(labels)
+    else:
+      ax.set_xticks([])
+    ax.set_title(main_key, size='x-large', y=0.95)
+    ax.spines['top'].set_visible(False)
+    ax.spines['right'].set_visible(False)
+    ax.spines['bottom'].set_visible(False)
+    ax.spines['left'].set_visible(False)
+    left= True
+    ax.tick_params(axis='both', which='both', bottom=False, top=False,
                   left=left, right=False, labeltop=False,
                   labelbottom=True, labelleft=left, labelright=False)
 
-fig.legend(loc='center right', fancybox=True, ncol=1, fontsize='large', bbox_to_anchor=(1.15, 0.35))
-fig.subplots_adjust(top=0.72, wspace=0.5, bottom=0)
-fig.text(x=-0.01, y=0.2, s='Fraction (in %)', rotation=90, size='xx-large')
-# plt.show()
-plt.savefig("./rank.pdf",bbox_inches = 'tight')
+  fig.legend(loc='center right', fancybox=True, ncol=1, fontsize='large', bbox_to_anchor=(1.15, 0.35))
+  fig.subplots_adjust(top=0.72, wspace=0.5, bottom=0)
+  fig.text(x=-0.01, y=0.2, s='Fraction (in %)', rotation=90, size='xx-large')
+  plt.savefig(dict,bbox_inches = 'tight')
+make_rank_plot(algs,indicator_list,dict,colors)
