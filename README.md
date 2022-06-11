@@ -39,6 +39,14 @@ Here we provide a [blank tex](https://github.com/ai-gamer/PRUDEX-Compass/blob/ma
     </tr>
 </table>
 
+
+
+![A2C](Compass/pictures/octagon/A2C.svg)|![PPO](Compass/pictures/octagon/PPO.svg)|![SAC](Compass/pictures/octagon/SAC.svg)
+---|---|---
+![SARL](Compass/pictures/octagon/SARL.svg)|![DeepTrader](Compass/pictures/octagon/DeepTrader.svg)|![AlphaMix+](Compass/pictures/octagon/AlphaMix.svg)
+
+<div STYLE="page-break-after: always;"></div>
+
 And here is the file structure for `octagon`
 ```
 -- ocatgon
