@@ -26,16 +26,14 @@ And here is the file structure for `Final compass`
 Here we provide a [blank tex](https://github.com/ai-gamer/PRUDEX-Compass/blob/main/Compass/generate/Finall%20compass/blank.tex) that you can play with, the blank tex does not have any color block but the hexagon and the outer ring, while the [example tex](https://github.com/ai-gamer/PRUDEX-Compass/blob/main/Compass/generate/Finall%20compass/example.tex) generate the picture shown above. we can use the [main.tex](https://github.com/ai-gamer/PRUDEX-Compass/blob/main/Compass/generate/Finall%20compass/main.tex) to see it. You can also alter the config or the colors of the compass.
 
 - A octagon to evaluate profitability,risk-control and diversity
-<table>
+<table align="center">
     <tr>
         <td ><center><img src="Compass/pictures/octagon/A2C.svg" width = 220 height = 220 />   </center></td>
         <td ><center><img src="Compass/pictures/octagon/PPO.svg" width = 220 height = 220 /> </center></td>
         <td ><center><img src="Compass/pictures/octagon/SAC.svg" width = 220 height = 220 /> </center></td>
     </tr>
     <tr>
-     <td ><center>(a)A2C</center></td>     
-    <td ><center>(b)PPO</center></td>                   
-     <td ><center>(c)SAC</center></td>                   
+     <td ><center>(a)A2C</center></td><td ><center>(b)PPO</center><td>      <td><center>(c)SAC</center></td>                   
     </tr>
     <tr>
         <td ><center><img src="Compass/pictures/octagon/SARL.svg" width = 220 height = 220 />                                (d)SARL </center></td>
