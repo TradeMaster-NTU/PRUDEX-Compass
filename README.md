@@ -33,7 +33,7 @@ Here we provide a [blank tex](https://github.com/ai-gamer/PRUDEX-Compass/blob/ma
         <td ><center><img src="Compass/pictures/octagon/SAC.svg" width = 220 height = 220 /> </center></td>
     </tr>
     <tr>
-     <td ><center>(a)A2C</center></td><td ><center>(b)PPO</center><td>      <td><center>(c)SAC</center></td>                   
+     <td align="center"><center>(a)A2C</center></td><td align="center"><center>(b)PPO</center></td>      <td align="center"><center>(c)SAC</center></td>                   
     </tr>
     <tr>
         <td ><center><img src="Compass/pictures/octagon/SARL.svg" width = 220 height = 220 />                                (d)SARL </center></td>
