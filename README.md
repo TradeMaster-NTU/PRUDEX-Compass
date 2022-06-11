@@ -28,7 +28,7 @@ Here we provide a [blank tex](https://github.com/ai-gamer/PRUDEX-Compass/blob/ma
 - A octagon to evaluate profitability,risk-control and diversity
 <table>
     <tr>
-        <td ><center><img src="Compass/pictures/octagon/A2C.svg" width = 220 height = 220 /><center> (a)A2C  </center> </center></td>
+        <td ><center><img src="Compass/pictures/octagon/A2C.svg" width = 220 height = 220 /> <center> (a) A2C  </center> </center></td>
         <td ><center><img src="Compass/pictures/octagon/PPO.svg" width = 220 height = 220 />(b)PPO </center></td>
         <td ><center><img src="Compass/pictures/octagon/SAC.svg" width = 220 height = 220 />(c)SAC </center></td>
     </tr>
