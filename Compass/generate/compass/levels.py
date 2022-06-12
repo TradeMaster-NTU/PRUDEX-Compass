@@ -1,31 +1,31 @@
 from dataclasses import dataclass
-from typing_extensions import assert_type
 
 
 @dataclass
 class InnerLevel:
     """Inner CLEVA-Compass level with method attributes."""
 
-    Proftability: int
+    
     Risk_Control: int
-    University: int
-    Diversity: int
-    Reliability: int
+    Proftability: int
     Explainability: int
+    Reliability: int
+    Diversity: int
+    University: int
     
 
     def __iter__(self):
         """
         Defines the iteration order. This needs to be the same order as defined in the
-        cleva_template.tex file.
+        blank.tex file.
         """
         for item in [
-            self.Proftability,
             self.Risk_Control,
-            self.University,
-            self.Diversity,
-            self.Reliability,
+            self.Proftability,
             self.Explainability,
+            self.Reliability,
+            self.Diversity,
+            self.University,
         ]:
             yield item
 
@@ -33,45 +33,53 @@ class InnerLevel:
 @dataclass
 class OuterLevel:
     """Outer CLEVA-Compass level with measurement attributes."""
-
-    alpha_decay: bool
-    profit: bool
-    extreme_market: bool
-    risk_adjusted: bool
-    risk: bool
-    time_scale: bool
-    assert_type: bool
     country: bool
-    rolling_window: bool
-    correlation: bool
-    entropy: bool
-    t_SNE: bool
-    rank_order: bool
-    variability: bool
-    profile: bool
+    assert_type: bool
+    time_scale: bool
+    risk: bool
+    risk_adjusted: bool
+    extreme_market: bool
+    profit: bool
+    alpha_decay: bool
+
     equity_curve: bool
+    profile: bool
+    variability: bool
+    rank_order: bool
+    t_SNE: bool
+    entropy: bool
+    correlation: bool
+    rolling_window: bool
+
     def __iter__(self):
         """
         Defines the iteration order. This needs to be the same order as defined in the
         cleva_template.tex file.
         """
         for item in [
-            self.alpha_decay,
-            self.profit,
-            self.extreme_market,
-            self.risk_adjusted,
-            self.risk,
-            self.time_scale,
-            self.assert_type,
+            
+            
             self.country,
-            self.rolling_window,
-            self.correlation,
-            self.entropy,
-            self.t_SNE,
-            self.rank_order,
-            self.variability,
-            self.profile,
+            self.assert_type,
+            self.time_scale,
+            self.risk,
+            self.risk_adjusted,
+            self.extreme_market,
+            self.profit,
+            self.alpha_decay,
+
             self.equity_curve,
+            self.profile,
+            self.variability,
+            self.rank_order,
+            self.t_SNE,
+            self.entropy,
+            self.correlation,
+            self.rolling_window,
+            
+
+
+
         ]:
             yield item
 

@@ -1,4 +1,5 @@
 #!/usr/bin/env python3
+# coding=gbk
 import json
 from typing import List
 import math
@@ -20,17 +21,17 @@ def parse_arguments():
     )
     parser.add_argument(
         "--template",
-        default="blank.tex",
+        default="Compass/generate/compass/blank.tex",
         help="Tikz template file.",
     )
     parser.add_argument(
         "--output",
-        default="filled.tex",
+        default="Compass/generate/compass/filled.tex",
         help="Tikz filled output file.",
     )
     parser.add_argument(
         "--data",
-        default="data.json",
+        default="Compass/generate/compass/data.json",
         help="Entries as JSON file.",
     )
 
@@ -57,8 +58,8 @@ def insert_legend(template, entries):
         return template
 
     # Compute number of rows/columns with max. three elements per row
-    n_rows = math.ceil(len(entries) / 3)
-    n_cols = 3 if len(entries) >= 3 else len(entries)
+    n_rows = math.ceil(len(entries) / 6)
+    n_cols = 6 if len(entries) >= 6 else len(entries)
 
     # Begin legend tabular
     legend_str = ""
@@ -66,8 +67,8 @@ def insert_legend(template, entries):
 
     for i, e in enumerate(entries):
         # x/y coordinates of the entry
-        x = i % 3
-        y = round(i // 3)
+        x = i % 6
+        y = round(i // 6)
 
         # Actual entry which uses \lentry defined in the tikz template
         legend_str += r"\lentry{" + mapcolor(e.color) + "}{" + e.label + "}"
