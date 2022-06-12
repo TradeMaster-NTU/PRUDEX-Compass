@@ -9,7 +9,7 @@ Moreover, this repositories also includes the intergrated result on 4 datasets, 
 The `PRUDEX-Compass` provides support for 
 - A systematic evaluation from 6 axes 
 <div align="center">
-  <img src="https://github.com/qinmoelei/PRUDEX-Compass/blob/main/Compass/pictures/compass.png" width = 400 height = 400 />
+  <img src="https://github.com/ai-gamer/PRUDEX-Compass/blob/main/Compass/pictures/FInal_compass.png" width = 400 height = 400 />
 </div>
 <!-- ![Image Title](https://github.com/ai-gamer/PRUDEX-Compass/blob/main/Compass/pictures/Final%20compass.pdf){width=65%} -->
 
