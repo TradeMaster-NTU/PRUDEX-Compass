@@ -36,7 +36,8 @@
   orangeshell/.style={draw=orange!90!black, fill=orange!80,fill opacity=0.4, opacity=0.3},
   cyanshell/.style={draw=cyan!90!black, fill=cyan!80!black,fill opacity=0.4, opacity=0.3},
   brownshell/.style={draw=brown!90!black, fill=brown!80!black,fill opacity=0.4, opacity=0.3},
-
+  % #1=radius, #2=start angle, #3=end angle, #4=draw style,
+  % #5 text colour, #6=text
   pics/strip/.style args = {#1,#2,#3,#4,#5,#6}{
        code = {
         \draw[#4] (#2:#1-1.25mm) arc (#2:#3:#1-1.25mm)
@@ -53,7 +54,8 @@
 
 
 \begin{tikzpicture}[scale=1]
-
+%   \path (0:0cm) coordinate (O); 
+%   \fill (O) circle (0pt);% define coordinate for origin
 
   draw the spiderweb
   \foreach \X in {1,...,\D}{
@@ -88,8 +90,67 @@
 
   \path (6*\A:\L) node (L6) [xshift=-5ex, yshift=9ex, rotate=\Doffset+3*\A]{Universality};
 
+    \draw [color=orange!90!black,line width=1.5pt,opacity=0.6, fill=orange!90!black!10, fill opacity=0.4] (D1-31) -- (D2-29) -- (D3-50) -- (D4-42) -- (D5-43) -- (D6-33) -- cycle;
+\draw [color=brown!90!black,line width=1.5pt,opacity=0.6, fill=brown!90!black!10, fill opacity=0.4] (D1-35) -- (D2-37) -- (D3-50) -- (D4-43) -- (D5-48) -- (D6-41) -- cycle;
+\draw [color=blue!70!black,line width=1.5pt,opacity=0.6, fill=blue!70!black!10, fill opacity=0.4] (D1-14) -- (D2-27) -- (D3-50) -- (D4-43) -- (D5-46) -- (D6-30) -- cycle;
+\draw [color=green!50!black,line width=1.5pt,opacity=0.6, fill=green!50!black!10, fill opacity=0.4] (D1-47) -- (D2-45) -- (D3-50) -- (D4-51) -- (D5-49) -- (D6-59) -- cycle;
+\draw [color=cyan!90!black,line width=1.5pt,opacity=0.6, fill=cyan!90!black!10, fill opacity=0.4] (D1-31) -- (D2-29) -- (D3-50) -- (D4-38) -- (D5-43) -- (D6-44) -- cycle;
+\draw [color=magenta,line width=1.5pt,opacity=0.6, fill=magenta!10, fill opacity=0.4] (D1-57) -- (D2-63) -- (D3-50) -- (D4-52) -- (D5-70) -- (D6-90) -- cycle;
 
-t-SNE, rolling window, extreme market, performance profile, optimal gap, alpha decay, cross market, cross assets, entropy diversity, rank, profit criteria, risk criteria, statistical significance
+
+    % Entry for: A2C
+\pic at (0,0){strip={\Instrip,0.0,3.75,orangeshell, black, {}}};
+\pic at (0,0){strip={\Instrip,90.0,93.75,orangeshell, black, {}}};
+\pic at (0,0){strip={\Instrip,135.0,138.75,orangeshell, black, {}}};
+
+% Entry for: PPO
+\pic at (0,0){strip={\Instrip,3.75,7.5,brownshell, black, {}}};
+\pic at (0,0){strip={\Instrip,93.75,97.5,brownshell, black, {}}};
+\pic at (0,0){strip={\Instrip,138.75,142.5,brownshell, black, {}}};
+
+% Entry for: SAC
+\pic at (0,0){strip={\Instrip,7.5,11.25,blueshell, black, {}}};
+\pic at (0,0){strip={\Instrip,97.5,101.25,blueshell, black, {}}};
+\pic at (0,0){strip={\Instrip,142.5,146.25,blueshell, black, {}}};
+
+% Entry for: SARL
+\pic at (0,0){strip={\Instrip,11.25,15.0,greenshell, black, {}}};
+\pic at (0,0){strip={\Instrip,33.75,37.5,greenshell, black, {}}};
+\pic at (0,0){strip={\Instrip,56.25,60.0,greenshell, black, {}}};
+\pic at (0,0){strip={\Instrip,78.75,82.5,greenshell, black, {}}};
+\pic at (0,0){strip={\Instrip,101.25,105.0,greenshell, black, {}}};
+\pic at (0,0){strip={\Instrip,146.25,150.0,greenshell, black, {}}};
+\pic at (0,0){strip={\Instrip,195.0,191.25,greenshell, black, {}}};
+
+% Entry for: DeepTrader
+\pic at (0,0){strip={\Instrip,15.0,18.75,cyanshell, black, {}}};
+\pic at (0,0){strip={\Instrip,82.5,86.25,cyanshell, black, {}}};
+\pic at (0,0){strip={\Instrip,105.0,108.75,cyanshell, black, {}}};
+\pic at (0,0){strip={\Instrip,150.0,153.75,cyanshell, black, {}}};
+\pic at (0,0){strip={\Instrip,198.75,195.0,cyanshell, black, {}}};
+
+% Entry for: AlphaMix+
+\pic at (0,0){strip={\Instrip,18.75,22.5,magentashell, black, {}}};
+\pic at (0,0){strip={\Instrip,41.25,45.0,magentashell, black, {}}};
+\pic at (0,0){strip={\Instrip,63.75,67.5,magentashell, black, {}}};
+\pic at (0,0){strip={\Instrip,86.25,90.0,magentashell, black, {}}};
+\pic at (0,0){strip={\Instrip,108.75,112.5,magentashell, black, {}}};
+\pic at (0,0){strip={\Instrip,131.25,135.0,magentashell, black, {}}};
+\pic at (0,0){strip={\Instrip,153.75,157.5,magentashell, black, {}}};
+\pic at (0,0){strip={\Instrip,202.5,198.75,magentashell, black, {}}};
+\pic at (0,0){strip={\Instrip,225.0,221.25,magentashell, black, {}}};
+\pic at (0,0){strip={\Instrip,247.5,243.75,magentashell, black, {}}};
+\pic at (0,0){strip={\Instrip,270.0,266.25,magentashell, black, {}}};
+\pic at (0,0){strip={\Instrip,292.5,288.75,magentashell, black, {}}};
+\pic at (0,0){strip={\Instrip,315.0,311.25,magentashell, black, {}}};
+\pic at (0,0){strip={\Instrip,337.5,333.75,magentashell, black, {}}};
+\pic at (0,0){strip={\Instrip,360.0,356.25,magentashell, black, {}}};
+
+
+
+
+
+
 
     \pic at (0,0){strip={\Outstrip,  1*\B,  0*\B,whitecircle,black,\nodefontsize country}};
     \pic at (0,0){strip={\Outstrip,  2*\B,  1*\B,whitecircle,black,\nodefontsize asset type}};
@@ -100,7 +161,6 @@ t-SNE, rolling window, extreme market, performance profile, optimal gap, alpha d
     \pic at (0,0){strip={\Outstrip,  7*\B,  6*\B,whitecircle,black,\nodefontsize profit}};
     \pic at (0,0){strip={\Outstrip,  8*\B,  7*\B,whitecircle,black,\nodefontsize alpha-decay}};
     
-
 
 
     \pic at (0,0){strip={\Outstrip,  8*\B,  9*\B,whitecircle,black,\nodefontsize  equity curve }};
@@ -121,16 +181,8 @@ t-SNE, rolling window, extreme market, performance profile, optimal gap, alpha d
     \coordinate (center) at (0,0);
     {\protect\NoHyper
     \node[] (legend) [below=4.05cm of center, align = left] {
-      \begin{tabular}{l l l l l l} 
-
-\lentry{orange}{A2C} &
-\lentry{brown}{PPO}& 
-\lentry{blue}{SAC}&
-\lentry{green!50!black}{SARL} &
-\lentry{cyan!90!black}{DeepTrader}&
-\lentry{magenta}{AlphaMix+} \\
-
-
+            \begin{tabular}{l l l l l l} 
+\lentry{orange!90!black}{A2C} & \lentry{brown!90!black}{PPO} & \lentry{blue!70!black}{SAC} & \lentry{green!50!black}{SARL} & \lentry{cyan!90!black}{DeepTrader} & \lentry{magenta}{AlphaMix+} \\ 
 \end{tabular} 
 
     };
