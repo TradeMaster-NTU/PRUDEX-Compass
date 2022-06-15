@@ -1,7 +1,7 @@
 # PRUDEX-Compass
-PRUDEX-Compass is a systematic evaluation methodology of reinforcement learning in financial market, which has 6 axes with a total of 16 measures for systematic evaluation of FinRL methods.
+PRUDEX-Compass is a systematic evaluation of reinforcement learning methodologies in financial market, which has 6 axes with a total of 16 measures for systematic evaluation of FinRL methods.
 
-Moreover, this repositories also includes the intergrated result of PRUDEX-Compass on 4 datasets for 6 FinRL methods, including one novel method: AlphaMix+, a strong FinRL baseline which leverages Mixture-of-Experts (MoE) and risk-sensitive approaches to make diversified risk-aware investment decisions.
+Moreover, this repository also includes the intergrated result of PRUDEX-Compass on 4 datasets for 6 FinRL methods, including one novel method: AlphaMix+, a strong FinRL baseline which leverages Mixture-of-Experts (MoE) and risk-sensitive approaches to make diversified risk-aware investment decisions.
 ## Compass
 The `PRUDEX-Compass` provides support for 
 - A systematic evaluation from 6 axes 
@@ -33,11 +33,11 @@ optional arguments:
 ```
 For this purpose we provide the blank file [`blank.tex`](https://github.com/ai-gamer/PRUDEX-Compass/blob/main/Compass/generate/compass/blank.tex), which looks like this 
 <div align="center">
-  <img src="https://github.com/ai-gamer/PRUDEX-Compass/blob/main/Compass/pictures/blankcompass.PNG" width = 400 height = 400 />
+  <img src="https://github.com/ai-gamer/PRUDEX-Compass/blob/main/Compass/pictures/blankcompass.PNG" width = 500 height = 400 />
 </div>
 
 ### Example Usage 
-The default reads the template file from [`blank.tex`](https://github.com/ai-gamer/PRUDEX-Compass/blob/main/Compass/generate/compass/blank.tex) and writes the filled output file into cleva_filled.tex with the data specified via --data <JSON_FILE>:
+The default reads the template file from [`blank.tex`](https://github.com/ai-gamer/PRUDEX-Compass/blob/main/Compass/generate/compass/blank.tex) and writes the filled output file into [`filled.tex`](https://github.com/ai-gamer/PRUDEX-Compass/blob/main/Compass/generate/compass/filled.tex) with the data specified via --data <JSON_FILE>:
 ```
 $ python Compass/generate/compass/create_compass.py--data Compass/generate/compass/data.json
 ```
@@ -51,9 +51,13 @@ A example CLEVA-Compass, generated with [`Compass/generate/compass/data.json`](h
 The JSON file specifies a list of entries, where each element defines a `color`, `label`, `inner_level`, and `outer_level`. The latter two specify the attributes visualized in the compass.
 
 `color`: Can be one of `["magenta", "green", "blue", "orange", "cyan", "brown"]`.
+
 `label`: A label describing the compass entry.
-`inner_level`: Specifies the inner compass level attributes. Attribute values must be between 1 and 100
+
+`inner_level`: Specifies the inner compass level attributes. Attribute values must be between 1 and 100.
+
 `outer_level`: Specifies the outer compass level attributes. Attribute values must boolean `(true/false)`.
+
 Here a json file is given as an example:
 ```
 {
