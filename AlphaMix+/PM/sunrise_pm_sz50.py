@@ -240,7 +240,7 @@ if __name__ == "__main__":
 
     )
 
-    exp_name = 'sunrise_pm'
+    exp_name = 'AlphaMix+'
 
     ptu.set_gpu_mode(True)
     #for seed in [51234]:

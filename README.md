@@ -1,10 +1,7 @@
 # PRUDEX-Compass
-PRUDEX-Compass is the first attempt to create a systematic evaluation
-of reinforcement learning in financial markets.
+PRUDEX-Compass is a systematic evaluation methodology of reinforcement learning in financial market, which has 6 axes with a total of 16 measures for systematic evaluation of FinRL methods.
 
-It has 6 axes with a total of 16 measures for systematic evaluation of FinRL methods.
-
-Moreover, this repositories also includes the intergrated result on 4 datasets, including one novel method: AlphaMix+, a strong FinRL baseline which leverages Mixture-of-Experts (MoE) and risk-sensitive approaches to make diversified risk-aware investment decisions.
+Moreover, this repositories also includes the intergrated result of PRUDEX-Compass on 4 datasets for 6 FinRL methods, including one novel method: AlphaMix+, a strong FinRL baseline which leverages Mixture-of-Experts (MoE) and risk-sensitive approaches to make diversified risk-aware investment decisions.
 ## Compass
 The `PRUDEX-Compass` provides support for 
 - A systematic evaluation from 6 axes 
@@ -66,7 +63,7 @@ Here we provide a [blank tex](https://github.com/ai-gamer/PRUDEX-Compass/blob/ma
 
 - A graph discribing the dirstribution of the score of different algorithms
 <div align="center">
-  <img src="Compass/pictures/overall.svg" width = 7000 height = 350 />
+  <img src="Compass/pictures/overall.svg" width = 400 height =  />
 </div>
 
 The key is to generate a dictionary whose key is the name of algorithms and the value is 2d array which represents different seeds and different task, then with the dictionary naming `overall_dict`, we can simpily use the code
@@ -100,7 +97,7 @@ For more precise information, please refer to [`Compass/generate/distribution/di
 
 - A graph discribing the rank informatino for different algorithms
 <div align="center">
-  <img src="Compass/pictures/rank.svg" width = 60000 height = 350 />
+  <img src="Compass/pictures/rank.svg" width = 400 height =  />
 
 </div> 
 
@@ -159,7 +156,7 @@ After traning, it will store the result under [`data`](https://github.com/ai-gam
 |-- crypto
 |-- foreign_exchange
 |-- portfolio_management
-|   |-- sunrise-pm
+|   |-- AlphaMix+
 |       |-- sz50
 |       |   `-- en_3_batch_256_plr_0.0007_qlr_0.0007_layer_128_2_buffer_10000_discount_0.99_tem_20_bm_0.5_uncertain_0.5
 |       |       |-- seed_12345
