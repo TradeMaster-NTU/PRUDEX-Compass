@@ -33,7 +33,7 @@ optional arguments:
 ```
 For this purpose we provide the blank file [`blank.tex`](https://github.com/ai-gamer/PRUDEX-Compass/blob/main/Compass/generate/compass/blank.tex), which looks like this 
 <div align="center">
-  <img src="https://github.com/ai-gamer/PRUDEX-Compass/blob/main/Compass/pictures/FInal_compass.png" width = 400 height = 400 />
+  <img src="https://github.com/ai-gamer/PRUDEX-Compass/blob/main/Compass/pictures/blankcompass.PNG" width = 400 height = 400 />
 </div>
 
 ### Example Usage 
@@ -92,7 +92,7 @@ Here a json file is given as an example:
   }
 ```
 and a more complicated example can be found in [`Compass/generate/compass/data.json`](https://github.com/ai-gamer/PRUDEX-Compass/blob/main/Compass/generate/compass/data.json)
-- A octagon to evaluate profitability,risk-control and diversity
+- A PRIDE-Star to evaluate profitability,risk-control and diversity
 <table align="center">
     <tr>
         <td ><center><img src="Compass/pictures/octagon/A2C.svg" width = 220 height = 220 />   </center></td>
@@ -115,9 +115,9 @@ and a more complicated example can be found in [`Compass/generate/compass/data.j
 
 <div STYLE="page-break-after: always;"></div>
 
-And here is the file structure for `octagon`
+And here is the file structure for `PRIDE-Star`
 ```
--- ocatgon
+-- PRIDE-Star 
     |-- A2C.tex
     |-- Alphamix+.tex
     |-- DeepTrader.tex
@@ -126,7 +126,7 @@ And here is the file structure for `octagon`
     |-- SARL.tex
     |-- blank.tex
 ```
-Here we provide a [blank tex](https://github.com/ai-gamer/PRUDEX-Compass/blob/main/Compass/generate/ocatgon/blank.tex) that you can play with, the blank tex does not have any color block but the hexagon and the outer ring, while the rest of tex generate the subpicture corresponding to the  shown above. You can also manipulate the color and the value for different algorithms to generate graphs.
+Here we provide a [blank tex](https://github.com/ai-gamer/PRUDEX-Compass/blob/main/Compass/generate/PRIDE-Star/blank.tex) that you can play with, the blank tex does not have any color block but the hexagon and the outer ring, while the rest of tex generate the subpicture corresponding to the  shown above. You can also manipulate the color and the value for different algorithms to generate graphs.
 
 - A graph discribing the dirstribution of the score of different algorithms
 <div align="center">
@@ -204,10 +204,11 @@ Here is the sctructure of the AlphaMix+.
     |-- rlkit
     |-- sac_gym.py
     |-- scripts
+    |-- AlphaMix+_sz50.py
     |-- setup.py
-    |-- sunrise_gym.py
-    `-- sunrise_pm_sz50.py
 
+
+    
 ```
 
 ### Example
