@@ -4,7 +4,7 @@ PRUDEX-Compass is a systematic evaluation of reinforcement learning methodologie
 Moreover, this repository also includes the intergrated result of PRUDEX-Compass on 4 datasets for 6 FinRL methods, including one novel method: AlphaMix+, a strong FinRL baseline which leverages Mixture-of-Experts (MoE) and risk-sensitive approaches to make diversified risk-aware investment decisions.
 ## Compass
 The `PRUDEX-Compass` provides support for 
-- A systematic evaluation from 6 axes 
+- A systematic evaluation from 6 axes and 16 measures
 
 
 Here is the file structure for [`compass`](https://github.com/ai-gamer/PRUDEX-Compass/tree/main/Compass/generate/compass)
@@ -96,6 +96,14 @@ Here a json file is given as an example:
   }
 ```
 and a more complicated example can be found in [`Compass/generate/compass/data.json`](https://github.com/ai-gamer/PRUDEX-Compass/blob/main/Compass/generate/compass/data.json)
+
+The resulting file [`filled.tex`](https://github.com/ai-gamer/PRUDEX-Compass/blob/main/Compass/generate/compass/filled.tex) can then be included into any LaTeX document, e.g.:
+```
+\begin{figure}
+    \input{filled.tex}
+    \caption{PRUDEX-Compass}
+\end{figure}
+```
 - A PRIDE-Star to evaluate profitability,risk-control and diversity
 <table align="center">
     <tr>
