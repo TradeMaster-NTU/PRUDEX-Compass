@@ -31,7 +31,11 @@ optional arguments:
   --output OUTPUT      Tikz filled output file. (default: Compass/generate/compass/filled.tex)
   --data DATA          Entries as JSON file. (default: Compass/generate/compass/data.json)
 ```
-For this purpose we provide the blank file [`blank.tex`](https://github.com/ai-gamer/PRUDEX-Compass/blob/main/Compass/generate/compass/blank.tex).
+For this purpose we provide the blank file [`blank.tex`](https://github.com/ai-gamer/PRUDEX-Compass/blob/main/Compass/generate/compass/blank.tex), which looks like this 
+<div align="center">
+  <img src="https://github.com/ai-gamer/PRUDEX-Compass/blob/main/Compass/pictures/FInal_compass.png" width = 400 height = 400 />
+</div>
+
 ### Example Usage 
 The default reads the template file from [`blank.tex`](https://github.com/ai-gamer/PRUDEX-Compass/blob/main/Compass/generate/compass/blank.tex) and writes the filled output file into cleva_filled.tex with the data specified via --data <JSON_FILE>:
 ```
@@ -43,7 +47,51 @@ A example CLEVA-Compass, generated with [`Compass/generate/compass/data.json`](h
   <img src="https://github.com/ai-gamer/PRUDEX-Compass/blob/main/Compass/pictures/FInal_compass.png" width = 400 height = 400 />
 </div>
 
+### JSON Data Format
+The JSON file specifies a list of entries, where each element defines a `color`, `label`, `inner_level`, and `outer_level`. The latter two specify the attributes visualized in the compass.
 
+`color`: Can be one of `["magenta", "green", "blue", "orange", "cyan", "brown"]`.
+`label`: A label describing the compass entry.
+`inner_level`: Specifies the inner compass level attributes. Attribute values must be between 1 and 100
+`outer_level`: Specifies the outer compass level attributes. Attribute values must boolean `(true/false)`.
+Here a json file is given as an example:
+```
+{
+    "entries": [
+      {
+        "color": "orange",
+        "label": "A2C",
+        "inner_level": {
+          "Proftability": 29,
+          "Risk_Control": 31,
+          "University": 33,
+          "Diversity": 43,
+          "Reliability": 42,
+          "Explainability": 50
+        },
+        "outer_level": {
+          "alpha_decay": false,
+          "profit": true,
+          "extreme_market": false,
+          "risk_adjusted": true,
+          "risk": false,
+          "time_scale": false,
+          "assert_type": false,
+          "country": true,
+          "rolling_window": false,
+          "correlation": false,
+          "entropy": false,
+          "t_SNE": false,
+          "rank_order": false,
+          "variability": false,
+          "profile": false,
+          "equity_curve": false
+        }
+      }
+    ]
+  }
+```
+and a more complicated example can be found in [`Compass/generate/compass/data.json`](https://github.com/ai-gamer/PRUDEX-Compass/blob/main/Compass/generate/compass/data.json)
 - A octagon to evaluate profitability,risk-control and diversity
 <table align="center">
     <tr>
