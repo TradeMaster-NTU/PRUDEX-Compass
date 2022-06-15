@@ -5,14 +5,9 @@ Moreover, this repositories also includes the intergrated result of PRUDEX-Compa
 ## Compass
 The `PRUDEX-Compass` provides support for 
 - A systematic evaluation from 6 axes 
-<div align="center">
-  <img src="https://github.com/ai-gamer/PRUDEX-Compass/blob/main/Compass/pictures/FInal_compass.png" width = 400 height = 400 />
-</div>
-<!-- ![Image Title](https://github.com/ai-gamer/PRUDEX-Compass/blob/main/Compass/pictures/Final%20compass.pdf){width=65%} -->
 
-<!-- ![Alt](./Compass/pictures/Final compass.pdf){width=100% height=400} -->
 
-And here is the file structure for `Final compass`
+Here is the file structure for [`compass`](https://github.com/ai-gamer/PRUDEX-Compass/tree/main/Compass/generate/compass)
 ```
 |--compass
 |   |-- blank.tex
@@ -23,8 +18,80 @@ And here is the file structure for `Final compass`
 |   |-- create_compass.py
 
 ```
-Here we provide a [blank tex](https://github.com/ai-gamer/PRUDEX-Compass/blob/main/Compass/generate/Finall%20compass/blank.tex) that you can play with, the blank tex does not have any color block but the hexagon and the outer ring, while the [create_compass.py](https://github.com/ai-gamer/PRUDEX-Compass/blob/main/Compass/generate/compass/create_compass.py) and [data.json](https://github.com/ai-gamer/PRUDEX-Compass/blob/main/Compass/generate/compass/data.json) together help generate the picture shown above. we can use the [main.tex](https://github.com/ai-gamer/PRUDEX-Compass/blob/main/Compass/compass/main.tex) to see it. You can also alter the config or the colors of the compass through [data.json](https://github.com/ai-gamer/PRUDEX-Compass/blob/main/Compass/generate/compass/data.json).
+You can use the [`create_compass.py`](https://github.com/ai-gamer/PRUDEX-Compass/blob/main/Compass/generate/compass/create_compass.py) python script to generate a compass and specify how it is filled for each continual approach in a JSON file:
+```
+$ python Compass/generate/compass/create_compass.py --h
+usage: create_compass.py [-h] [--template TEMPLATE] [--output OUTPUT] [--data DATA]
 
+CLEVA-Compass Generator.
+
+optional arguments:
+  -h, --help           show this help message and exit
+  --template TEMPLATE  Tikz template file. (default: Compass/generate/compass/blank.tex)
+  --output OUTPUT      Tikz filled output file. (default: Compass/generate/compass/filled.tex)
+  --data DATA          Entries as JSON file. (default: Compass/generate/compass/data.json)
+```
+For this purpose we provide the blank file [`blank.tex`](https://github.com/ai-gamer/PRUDEX-Compass/blob/main/Compass/generate/compass/blank.tex), which looks like this 
+<div align="center">
+  <img src="https://github.com/ai-gamer/PRUDEX-Compass/blob/main/Compass/pictures/FInal_compass.png" width = 400 height = 400 />
+</div>
+
+### Example Usage 
+The default reads the template file from [`blank.tex`](https://github.com/ai-gamer/PRUDEX-Compass/blob/main/Compass/generate/compass/blank.tex) and writes the filled output file into cleva_filled.tex with the data specified via --data <JSON_FILE>:
+```
+$ python Compass/generate/compass/create_compass.py--data Compass/generate/compass/data.json
+```
+A example CLEVA-Compass, generated with [`Compass/generate/compass/data.json`](https://github.com/ai-gamer/PRUDEX-Compass/blob/main/Compass/generate/compass/data.json), looks like this:
+
+<div align="center">
+  <img src="https://github.com/ai-gamer/PRUDEX-Compass/blob/main/Compass/pictures/FInal_compass.png" width = 400 height = 400 />
+</div>
+
+### JSON Data Format
+The JSON file specifies a list of entries, where each element defines a `color`, `label`, `inner_level`, and `outer_level`. The latter two specify the attributes visualized in the compass.
+
+`color`: Can be one of `["magenta", "green", "blue", "orange", "cyan", "brown"]`.
+`label`: A label describing the compass entry.
+`inner_level`: Specifies the inner compass level attributes. Attribute values must be between 1 and 100
+`outer_level`: Specifies the outer compass level attributes. Attribute values must boolean `(true/false)`.
+Here a json file is given as an example:
+```
+{
+    "entries": [
+      {
+        "color": "orange",
+        "label": "A2C",
+        "inner_level": {
+          "Proftability": 29,
+          "Risk_Control": 31,
+          "University": 33,
+          "Diversity": 43,
+          "Reliability": 42,
+          "Explainability": 50
+        },
+        "outer_level": {
+          "alpha_decay": false,
+          "profit": true,
+          "extreme_market": false,
+          "risk_adjusted": true,
+          "risk": false,
+          "time_scale": false,
+          "assert_type": false,
+          "country": true,
+          "rolling_window": false,
+          "correlation": false,
+          "entropy": false,
+          "t_SNE": false,
+          "rank_order": false,
+          "variability": false,
+          "profile": false,
+          "equity_curve": false
+        }
+      }
+    ]
+  }
+```
+and a more complicated example can be found in [`Compass/generate/compass/data.json`](https://github.com/ai-gamer/PRUDEX-Compass/blob/main/Compass/generate/compass/data.json)
 - A octagon to evaluate profitability,risk-control and diversity
 <table align="center">
     <tr>
@@ -175,7 +242,7 @@ After traning, it will store the result under [`data`](https://github.com/ai-gam
 |-- sz50
 
 ```
-Under the [`portfolio_management/sunrise-pm`](https://github.com/ai-gamer/PRUDEX-Compass/tree/main/AlphaMix%2B/PM/data/portfolio_management/sunrise-pm), we can get the the name of our dataset under which lies the the name of model indicating its super-parameters under which lies the result for different seed which contains the overall result on the valid and test dataset in [`result.csv`](https://github.com/ai-gamer/PRUDEX-Compass/blob/main/AlphaMix%2B/PM/data/portfolio_management/sunrise-pm/sz50/en_3_batch_256_plr_0.0007_qlr_0.0007_layer_128_2_buffer_10000_discount_0.99_tem_20_bm_0.5_uncertain_0.5/seed_12345/result.csv) and more specifically, action and daily return for each epoch on the test set in [`test_daily_action_(number of epoch).npy`](https://github.com/ai-gamer/PRUDEX-Compass/blob/main/AlphaMix%2B/PM/data/portfolio_management/sunrise-pm/sz50/en_3_batch_256_plr_0.0007_qlr_0.0007_layer_128_2_buffer_10000_discount_0.99_tem_20_bm_0.5_uncertain_0.5/seed_12345/test_daily_action_0.npy) and [`test_daily_return_(number of epoch).csv`](https://github.com/ai-gamer/PRUDEX-Compass/blob/main/AlphaMix%2B/PM/data/portfolio_management/sunrise-pm/sz50/en_3_batch_256_plr_0.0007_qlr_0.0007_layer_128_2_buffer_10000_discount_0.99_tem_20_bm_0.5_uncertain_0.5/seed_12345/test_daily_return_0.csv).
+Under the [`portfolio_management/AlphaMix+`](https://github.com/ai-gamer/PRUDEX-Compass/tree/main/AlphaMix%2B/PM/data/portfolio_management/AlphaMix%2B), we can get the the name of our dataset under which lies the the name of model indicating its super-parameters under which lies the result for different seed which contains the overall result on the valid and test dataset in [`result.csv`](https://github.com/ai-gamer/PRUDEX-Compass/blob/main/AlphaMix%2B/PM/data/portfolio_management/AlphaMix%2B/sz50/en_3_batch_256_plr_0.0007_qlr_0.0007_layer_128_2_buffer_10000_discount_0.99_tem_20_bm_0.5_uncertain_0.5/seed_12345/result.csv) and more specifically, action and daily return for each epoch on the test set in [`test_daily_action_(number of epoch).npy`](https://github.com/ai-gamer/PRUDEX-Compass/blob/main/AlphaMix%2B/PM/data/portfolio_management/AlphaMix%2B/sz50/en_3_batch_256_plr_0.0007_qlr_0.0007_layer_128_2_buffer_10000_discount_0.99_tem_20_bm_0.5_uncertain_0.5/seed_12345/test_daily_action_0.npy) and [`test_daily_return_(number of epoch).csv`](https://github.com/ai-gamer/PRUDEX-Compass/blob/main/AlphaMix%2B/PM/data/portfolio_management/AlphaMix%2B/sz50/en_3_batch_256_plr_0.0007_qlr_0.0007_layer_128_2_buffer_10000_discount_0.99_tem_20_bm_0.5_uncertain_0.5/seed_12345/test_daily_return_0.csv).
 
-For users to pick the best model, we also add a [`sz50.ipynb`](https://github.com/ai-gamer/PRUDEX-Compass/blob/main/AlphaMix%2B/PM/data/portfolio_management/sunrise-pm/sz50.ipynb) in the example which help pick the best model, calculate a series of financial indicators, and summrize the result.
+For users to pick the best model, we also add a [`sz50.ipynb`](https://github.com/ai-gamer/PRUDEX-Compass/blob/main/AlphaMix%2B/PM/data/portfolio_management/AlphaMix%2B/sz50.ipynb) in the example which help pick the best model, calculate a series of financial indicators, and summrize the result.
 
