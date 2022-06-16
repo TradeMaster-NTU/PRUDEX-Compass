@@ -194,6 +194,26 @@ make_rank_plot(algs,indicator_list,".rank.pdf",colors)
 to generate the graph.
 
 For more information, please refer to [`rank.py`](https://github.com/ai-gamer/PRUDEX-Compass/blob/main/Compass/generate/rank/rank.py)
+## Performance under Extreme Markets
+- The performance under extreme markets is also a bar plot, which reflects FinRL methods' ability to deal with black swan events in terms of total return and sharpe ratio compared with uniform policy.
+<div align="center">
+  <img src="Compass/pictures/crypto.svg" width = 400 height =  />
+</div> 
+The key is to select a volatile period and get the daily return rate . Then we can simpliy use the code
+
+```
+from Compass.generate.exen.exen import evaualte,plot_pictures
+A2C=pd.read_csv("./A2C.csv",index_col=0)
+SARL=pd.read_csv("./SARL.csv",index_col=0)
+DeepTrader=pd.read_csv("./DeepTrader.csv",index_col=0)
+PPO=pd.read_csv("./PPO.csv",index_col=0)
+SAC=pd.read_csv("./SAC.csv",index_col=0)
+AlphaMix=pd.read_csv("AlphaMix+.csv",index_col=0)
+path=".exen.pdf"
+plot_pictures(new_models,path)
+```
+
+to generate the graph.
 ## AlphaMix+
 AlphaMix+, a universal RL framework with diversified risk-aware Mixture-of-Experts(MoE) for quantitative trading.
 
