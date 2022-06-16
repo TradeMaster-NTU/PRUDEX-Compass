@@ -1,7 +1,9 @@
 # PRUDEX-Compass
-PRUDEX-Compass is a systematic evaluation of reinforcement learning methodologies in financial market, which has 6 axes with a total of 16 measures for systematic evaluation of FinRL methods.
+PRUDEX-Compass is designed for systematic evaluation of FinRL methods, which has 6 axes with a total of 16 measures.
 
-Moreover, this repository also includes the intergrated result of PRUDEX-Compass on 4 datasets for 6 FinRL methods, including one novel method: AlphaMix+, a strong FinRL baseline which leverages Mixture-of-Experts (MoE) and risk-sensitive approaches to make diversified risk-aware investment decisions.
+<div align="center">
+  <img src="https://github.com/ai-gamer/PRUDEX-Compass/blob/main/Compass/pictures/FInal_compass.png" width = 400 height = 400 />
+</div>
 
 ## Install
 To install the dependency, you need to download the repository, then use the command:
