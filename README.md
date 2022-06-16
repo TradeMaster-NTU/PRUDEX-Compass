@@ -1,18 +1,19 @@
 # PRUDEX-Compass
-PRUDEX-Compass is designed for systematic evaluation of FinRL methods, which has 6 axes with a total of 16 measures.
+PRUDEX-Compass is designed for systematic evaluation of FinRL methods with 6 axes and 16 measures.
 
 <div align="center">
   <img src="https://github.com/ai-gamer/PRUDEX-Compass/blob/main/Compass/pictures/FInal_compass.png" width = 400 height = 400 />
 </div>
 
 ## Install
-To install the dependency, you need to download the repository, then use the command:
+To install the dependency of `PRUDEX-Compass`, run the command:
 ```
 pip install -r requirements.txt
 ```
-to install the dependency in the [`requirements.txt`](https://github.com/ai-gamer/PRUDEX-Compass/blob/main/requirements.txt) to draw the compass and train AlphaMix+.
 
-## Compass
+
+## Creating PRUDEX-Compass
+We provide two options for practical use.
 The `PRUDEX-Compass` provides support for 
 - A systematic evaluation from 6 axes and 16 measures
 
