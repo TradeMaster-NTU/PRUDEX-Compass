@@ -12,24 +12,9 @@ pip install -r requirements.txt
 ```
 
 
-## Creating PRUDEX-Compass
-We provide two options for practical use.
-The `PRUDEX-Compass` provides support for 
-- A systematic evaluation from 6 axes and 16 measures
+## Creating PRUDEX-Compass Using the Python Script
 
-
-Here is the file structure for [`compass`](https://github.com/ai-gamer/PRUDEX-Compass/tree/main/Compass/generate/compass)
-```
-|--compass
-|   |-- blank.tex
-|   |-- filled.tex
-|   |-- main.tex
-|   |-- data.json
-|   |-- level.py
-|   |-- create_compass.py
-
-```
-You can use the [`create_compass.py`](https://github.com/ai-gamer/PRUDEX-Compass/blob/main/Compass/generate/compass/create_compass.py) python script to generate a compass and specify how it is filled for each continual approach in a JSON file:
+You can use the [`create_compass.py`](https://github.com/ai-gamer/PRUDEX-Compass/blob/main/Compass/generate/compass/create_compass.py) python script to generate a compass and specify how it is filled for each FinRL method in a JSON file:
 ```
 $ python Compass/generate/compass/create_compass.py --h
 usage: create_compass.py [-h] [--template TEMPLATE] [--output OUTPUT] [--data DATA]
@@ -42,23 +27,23 @@ optional arguments:
   --output OUTPUT      Tikz filled output file. (default: Compass/generate/compass/filled.tex)
   --data DATA          Entries as JSON file. (default: Compass/generate/compass/data.json)
 ```
-For this purpose we provide the blank file [`blank.tex`](https://github.com/ai-gamer/PRUDEX-Compass/blob/main/Compass/generate/compass/blank.tex), which looks like this 
+For this purpose we provide the blank file [`blank.tex`](https://github.com/ai-gamer/PRUDEX-Compass/blob/main/Compass/generate/compass/blank.tex).
 <div align="center">
   <img src="https://github.com/ai-gamer/PRUDEX-Compass/blob/main/Compass/pictures/blankcompass.PNG" width = 500 height = 400 />
 </div>
 
-### Example Usage 
+## Example Usage 
 The default reads the template file from [`blank.tex`](https://github.com/ai-gamer/PRUDEX-Compass/blob/main/Compass/generate/compass/blank.tex) and writes the filled output file into [`filled.tex`](https://github.com/ai-gamer/PRUDEX-Compass/blob/main/Compass/generate/compass/filled.tex) with the data specified via --data <JSON_FILE>:
 ```
 $ python Compass/generate/compass/create_compass.py--data Compass/generate/compass/data.json
 ```
-A example CLEVA-Compass, generated with [`Compass/generate/compass/data.json`](https://github.com/ai-gamer/PRUDEX-Compass/blob/main/Compass/generate/compass/data.json), looks like this:
+A example CLEVA-Compass, generated with [`Compass/generate/compass/data.json`](https://github.com/ai-gamer/PRUDEX-Compass/blob/main/Compass/generate/compass/data.json).
 
 <div align="center">
   <img src="https://github.com/ai-gamer/PRUDEX-Compass/blob/main/Compass/pictures/FInal_compass.png" width = 400 height = 400 />
 </div>
 
-### JSON Data Format
+## JSON Data Format
 The JSON file specifies a list of entries, where each element defines a `color`, `label`, `inner_level`, and `outer_level`. The latter two specify the attributes visualized in the compass.
 
 `color`: Can be one of `["magenta", "green", "blue", "orange", "cyan", "brown"]`.
@@ -71,12 +56,10 @@ The JSON file specifies a list of entries, where each element defines a `color`,
 
 Here a json file is given as an example:
 ```
-{
-    "entries": [
-      {
-        "color": "orange",
-        "label": "A2C",
-        "inner_level": {
+{"entries": [{
+       "color": "orange",
+       "label": "A2C",
+       "inner_level": {
           "Proftability": 29,
           "Risk_Control": 31,
           "University": 33,
@@ -84,7 +67,7 @@ Here a json file is given as an example:
           "Reliability": 42,
           "Explainability": 50
         },
-        "outer_level": {
+       "outer_level": {
           "alpha_decay": false,
           "profit": true,
           "extreme_market": false,
@@ -100,11 +83,7 @@ Here a json file is given as an example:
           "rank_order": false,
           "variability": false,
           "profile": false,
-          "equity_curve": false
-        }
-      }
-    ]
-  }
+          "equity_curve": false  }}]}
 ```
 and a more complicated example can be found in [`Compass/generate/compass/data.json`](https://github.com/ai-gamer/PRUDEX-Compass/blob/main/Compass/generate/compass/data.json)
 
@@ -115,7 +94,9 @@ The resulting file [`filled.tex`](https://github.com/ai-gamer/PRUDEX-Compass/blo
     \caption{PRUDEX-Compass}
 \end{figure}
 ```
-- A PRIDE-Star to evaluate profitability,risk-control and diversity
+
+## PRIDE-Star
+- The PRIDE-Star is used to evaluate profitability,risk-control and diversity
 <table align="center">
     <tr>
         <td ><center><img src="Compass/pictures/octagon/A2C.svg" width = 220 height = 220 />   </center></td>
@@ -151,7 +132,8 @@ And here is the file structure for `PRIDE-Star`
 ```
 Here we provide a [blank tex](https://github.com/ai-gamer/PRUDEX-Compass/blob/main/Compass/generate/PRIDE-Star/blank.tex) that you can play with, the blank tex does not have any color block but the hexagon and the outer ring, while the rest of tex generate the subpicture corresponding to the  shown above. You can also manipulate the color and the value for different algorithms to generate graphs.
 
-- A graph discribing the dirstribution of the score of different algorithms
+## Performance Profile
+- The performance profile reports FinRL methods' score distribution of all runs across the differentfinancial markets that are statistically unbiased and more robust to outliers.
 <div align="center">
   <img src="Compass/pictures/overall.svg" width = 400 height =  />
 </div>
@@ -181,11 +163,13 @@ dict=tt_dict_crypto
 algorithms = ['A2C','PPO','SAC','SARL','DeepTrader',"AlphaMix+"]
 make_distribution_plot(dict,algorithms,2000,xlabel,"./distribution",ATARI_100K_COLOR_DICT)
 ```
-to generate the distribution. Notice that we only use one dicator (total return in the example) to demonstrate the graph, which is a little different from what we have next(rank information).
+to generate the distribution. Notice that we only use one metrics (total return in the example) to demonstrate the graph.
 
 For more precise information, please refer to [`Compass/generate/distribution/distribution.py`](https://github.com/ai-gamer/PRUDEX-Compass/blob/main/Compass/generate/distribution/distribution.py)
 
-- A graph discribing the rank informatino for different algorithms
+## Rank Distribution
+- The rank distribution plot is a bar plot, where the i-th column in the rank distribution shows the probability
+that a given method is assigned rank i in the corresponding metrics.
 <div align="center">
   <img src="Compass/pictures/rank.svg" width = 400 height =  />
 
