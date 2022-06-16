@@ -214,6 +214,8 @@ plot_pictures(new_models,path)
 ```
 
 to generate the graph.
+
+For more information, please refer to [`exen.py`](https://github.com/ai-gamer/PRUDEX-Compass/blob/main/Compass/generate/exen/exen.py)
 ## AlphaMix+
 AlphaMix+, a universal RL framework with diversified risk-aware Mixture-of-Experts(MoE) for quantitative trading.
 
