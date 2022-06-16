@@ -8,7 +8,7 @@ To install the dependency, you need to download the repository, then use the com
 ```
 pip install -r requirements.txt
 ```
-to install everything you need to draw the compass and train AlphaMix+.
+to install the dependency in the [`requirements.txt`](https://github.com/ai-gamer/PRUDEX-Compass/blob/main/requirements.txt) to draw the compass and train AlphaMix+.
 
 ## Compass
 The `PRUDEX-Compass` provides support for 
