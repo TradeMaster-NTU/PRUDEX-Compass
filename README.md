@@ -1,5 +1,5 @@
 # PRUDEX-Compass
-PRUDEX-Compass is designed for systematic evaluation of FinRL methods with 6 axes and 16 measures.
+**PRUDEX-Compass** is designed for systematic evaluation of FinRL methods with 6 axes and 16 measures.
 
 <div align="center">
   <img src="https://github.com/ai-gamer/PRUDEX-Compass/blob/main/Compass/pictures/FInal_compass.png" width = 400 height = 400 />
