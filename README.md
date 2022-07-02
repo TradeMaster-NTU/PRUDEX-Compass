@@ -241,8 +241,7 @@ Here is the sctructure of the AlphaMix+.
 ```
 
 ### Example
-Here we use the sz50 dataset as an example to show you how we can use it.
-We can directly open the [`sunrise_pm_sz50.py`](https://github.com/ai-gamer/PRUDEX-Compass/blob/main/AlphaMix%2B/PM/sunrise_pm_sz50.py) under [`PM`](https://github.com/ai-gamer/PRUDEX-Compass/tree/main/AlphaMix%2B/PM).You can dierctly run it or run it on the `bash` using 
+Here we use the sz50 dataset as an example to show you how we can use it. Run it or run it on the `bash` using 
 ```
 python ./AlphaMix+_sz50.py --dataset sz50 --num_layer 4
 ```
