@@ -276,3 +276,8 @@ Under the [`portfolio_management/AlphaMix+`](https://github.com/ai-gamer/PRUDEX-
 
 For users to pick the best model, we also add a [`sz50.ipynb`](https://github.com/ai-gamer/PRUDEX-Compass/blob/main/AlphaMix%2B/PM/data/portfolio_management/AlphaMix%2B/sz50.ipynb) in the example which help pick the best model, calculate a series of financial indicators, and summrize the result.
 
+## Acknowledgements
+This repository is developed based on:
+[RLKit](https://github.com/rail-berkeley/rlkit)
+[FinRL](https://github.com/AI4Finance-Foundation/FinRL)
+[Sunrise](https://github.com/pokaxpoka/sunrise)
