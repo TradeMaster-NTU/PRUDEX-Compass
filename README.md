@@ -243,7 +243,7 @@ Here is the sctructure of the AlphaMix+.
 ### Example
 Here we use the sz50 dataset as an example to show you how we can use it. Run it on the `bash` using 
 ```
-python ./AlphaMix+_sz50.py --dataset sz50 --num_layer 4
+python ./AlphaMix+_sz50.py --dataset dj30 --num_layer 4
 ```
 or any paramaters you want to change which is defined in the `parse_args` function.
 
