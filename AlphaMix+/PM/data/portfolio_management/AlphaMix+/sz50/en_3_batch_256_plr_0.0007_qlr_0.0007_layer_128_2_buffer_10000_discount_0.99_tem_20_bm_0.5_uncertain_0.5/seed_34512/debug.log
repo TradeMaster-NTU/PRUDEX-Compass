@@ -1,0 +1,72 @@
+2022-05-20 11:23:38.214391 +08 | [seed_12345] [seed_23451] [seed_34512] Variant:
+2022-05-20 11:23:38.214850 +08 | [seed_12345] [seed_23451] [seed_34512] {
+  "algorithm": "SAC",
+  "version": "normal",
+  "layer_size": 128,
+  "buffer_size": 10000,
+  "algorithm_kwargs": {
+    "num_epochs": 10,
+    "num_eval_steps_per_epoch": 1500,
+    "num_trains_per_train_loop": 1500,
+    "num_expl_steps_per_train_loop": 1500,
+    "min_num_steps_before_training": 10000,
+    "max_path_length": 5000,
+    "batch_size": 256,
+    "save_frequency": 0
+  },
+  "trainer_kwargs": {
+    "discount": 0.99,
+    "soft_target_tau": 0.005,
+    "target_update_period": 1,
+    "policy_lr": 0.0007,
+    "qf_lr": 0.0007,
+    "reward_scale": 1,
+    "use_automatic_entropy_tuning": true
+  },
+  "num_ensemble": 3,
+  "num_layer": 2,
+  "dataset": "sz50",
+  "seed": 45123,
+  "ber_mean": 0.5,
+  "env": "portfolio_management",
+  "inference_type": 0.0,
+  "temperature": 20.0,
+  "log_dir": "/home/sunshuo/qml/RL_Mix/PM/rlkit/../data/portfolio_management/sunrise-pm/sz50/en_3_batch_256_plr_0.0007_qlr_0.0007_layer_128_2_buffer_10000_discount_0.99_tem_20_bm_0.5_uncertain_0.5/seed_34512",
+  "uncertainty": 0.5
+}
+2022-05-20 11:42:02.257530 +08 | [seed_12345] [seed_23451] [seed_34512] [seed_45123] Variant:
+2022-05-20 11:42:02.257976 +08 | [seed_12345] [seed_23451] [seed_34512] [seed_45123] {
+  "algorithm": "SAC",
+  "version": "normal",
+  "layer_size": 128,
+  "buffer_size": 10000,
+  "algorithm_kwargs": {
+    "num_epochs": 10,
+    "num_eval_steps_per_epoch": 1500,
+    "num_trains_per_train_loop": 1500,
+    "num_expl_steps_per_train_loop": 1500,
+    "min_num_steps_before_training": 10000,
+    "max_path_length": 5000,
+    "batch_size": 256,
+    "save_frequency": 0
+  },
+  "trainer_kwargs": {
+    "discount": 0.99,
+    "soft_target_tau": 0.005,
+    "target_update_period": 1,
+    "policy_lr": 0.0007,
+    "qf_lr": 0.0007,
+    "reward_scale": 1,
+    "use_automatic_entropy_tuning": true
+  },
+  "num_ensemble": 3,
+  "num_layer": 2,
+  "dataset": "sz50",
+  "seed": 51234,
+  "ber_mean": 0.5,
+  "env": "portfolio_management",
+  "inference_type": 0.0,
+  "temperature": 20.0,
+  "log_dir": "/home/sunshuo/qml/RL_Mix/PM/rlkit/../data/portfolio_management/sunrise-pm/sz50/en_3_batch_256_plr_0.0007_qlr_0.0007_layer_128_2_buffer_10000_discount_0.99_tem_20_bm_0.5_uncertain_0.5/seed_45123",
+  "uncertainty": 0.5
+}
