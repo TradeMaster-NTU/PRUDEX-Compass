@@ -200,9 +200,9 @@ For more information, please refer to [`rank.py`](https://github.com/ai-gamer/PR
 - The performance under extreme markets is also a bar plot, which reflects FinRL methods' ability to deal with black swan events in terms of total return and sharpe ratio compared with uniform policy.
 <table align="center">
     <tr>
-        <td ><center><img src="Compass/pictures/exen/crypto.svg" width = 180 height = 180 />   </center></td>
-        <td ><center><img src="Compass/pictures/exen/dj30(4).svg" width = 180 height = 180 /> </center></td>
-        <td ><center><img src="Compass/pictures/exen/sz50(25).svg" width = 180 height = 180 /> </center></td>
+        <td ><center><img src="Compass/pictures/exen/crypto.svg" width = 250 height = 180 />   </center></td>
+        <td ><center><img src="Compass/pictures/exen/dj30(4).svg" width = 250 height = 180 /> </center></td>
+        <td ><center><img src="Compass/pictures/exen/sz50(25).svg" width = 250 height = 180 /> </center></td>
     </tr>
     <tr>
      <td align="center"><center>(a) Crypto</center></td>
