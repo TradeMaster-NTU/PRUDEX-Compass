@@ -29,7 +29,7 @@ optional arguments:
 ```
 For this purpose we provide the blank file [`blank.tex`](https://github.com/ai-gamer/PRUDEX-Compass/blob/main/Compass/generate/compass/blank.tex).
 <div align="center">
-  <img src="Compass/pictures/final/final.svg" width = 500 height = 400 />
+  <img src="Compass/pictures/blank.svg" width = 500 height = 400 />
 </div>
 
 ## Example Usage 
@@ -40,7 +40,7 @@ $ python Compass/generate/compass/create_compass.py--data Compass/generate/compa
 A example CLEVA-Compass, generated with [`Compass/generate/compass/data.json`](https://github.com/ai-gamer/PRUDEX-Compass/blob/main/Compass/generate/compass/data.json).
 
 <div align="center">
-  <img src="Compass/pictures/final.svg" width = 500 height = 400 />
+  <img src="Compass/pictures/final/final.svg" width = 500 height = 400 />
 </div>
 
 ## JSON Data Format
