@@ -198,9 +198,18 @@ to generate the graph.
 For more information, please refer to [`rank.py`](https://github.com/ai-gamer/PRUDEX-Compass/blob/main/Compass/generate/rank/rank.py)
 ## Performance under Extreme Markets
 - The performance under extreme markets is also a bar plot, which reflects FinRL methods' ability to deal with black swan events in terms of total return and sharpe ratio compared with uniform policy.
-<div align="center">
-  <img src="Compass/pictures/crypto.svg" width = 400 height =  />
-</div> 
+<table align="center">
+    <tr>
+        <td ><center><img src="Compass/pictures/exen/crypto.svg" width = 180 height = 180 />   </center></td>
+        <td ><center><img src="Compass/pictures/exen/dj30(4).svg" width = 180 height = 180 /> </center></td>
+        <td ><center><img src="Compass/pictures/exen/sz50(25).svg" width = 180 height = 180 /> </center></td>
+    </tr>
+    <tr>
+     <td align="center"><center>(a) Crypto</center></td>
+     <td align="center"><center>(b) DJ30</center></td>
+     <td align="center"><center>(c) SZ50</center></td> 
+    </tr>
+</table>
 The key is to select a volatile period and get the daily return rate . Then we can simpliy use the code
 
 ```
@@ -215,7 +224,7 @@ path=".exen.pdf"
 plot_pictures(new_models,path)
 ```
 
-to generate the graph.
+to generate the first graph.
 
 For more information, please refer to [`exen.py`](https://github.com/ai-gamer/PRUDEX-Compass/blob/main/Compass/generate/exen/exen.py)
 ## AlphaMix+
