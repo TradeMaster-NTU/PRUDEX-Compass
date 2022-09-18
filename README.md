@@ -2,7 +2,7 @@
 **PRUDEX-Compass** is designed for systematic evaluation of FinRL methods with 6 axes and 16 measures.
 
 <div align="center">
-  <img src="Compass/pictures/final.svg" width = 400 height = 400 />
+  <img src="Compass/pictures/final.svg" width = 500 height = 500 />
 </div>
 
 ## Install
