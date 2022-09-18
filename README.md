@@ -29,7 +29,7 @@ optional arguments:
 ```
 For this purpose we provide the blank file [`blank.tex`](https://github.com/ai-gamer/PRUDEX-Compass/blob/main/Compass/generate/compass/blank.tex).
 <div align="center">
-  <img src="https://github.com/TradeMaster-NTU/PRUDEX-Compass/tree/main/Compass/pictures/blank.jpg" width = 500 height = 400 />
+  <img src="Compass/pictures/blank.svg" width = 500 height = 400 />
 </div>
 
 ## Example Usage 
@@ -105,7 +105,7 @@ The resulting file [`filled.tex`](https://github.com/ai-gamer/PRUDEX-Compass/blo
         <td ><center><img src="Compass/pictures/octagon/SARL.svg" width = 180 height = 180 /> </center></td>
     </tr>
     <tr>
-     <td align="center"><center>(a) A2C</center></td><td align="center"><center>(b) PPO</center></td><td align="center"><center>(c) SAC</center></td> <td align="center"><center>(d) SARL</center></td><td align="center"><center>                  
+     <td align="center"><center>(a) A2C</center></td><td align="center"><center>(b) PPO</center></td><td align="center"><center>(c) SAC</center></td> <td align="center"><center>(d) SARL</center></td>               
     </tr>
     <tr>
         <td ><center><img src="Compass/pictures/octagon/IMIT.svg" width = 180 height = 180 /> </center></td>
@@ -137,7 +137,7 @@ Here we provide a [blank tex](https://github.com/ai-gamer/PRUDEX-Compass/blob/ma
 ## Performance Profile
 - The performance profile reports FinRL methods' score distribution of all runs across the differentfinancial markets that are statistically unbiased and more robust to outliers.
 <div align="center">
-  <img src="Compass/pictures/overall.svg" width = 400 height =  />
+  <img src="Compass/pictures/overall(13).svg" width = 400 height =  />
 </div>
 
 The key is to generate a dictionary whose key is the name of algorithms and the value is 2d array which represents different seeds and different task, then with the dictionary naming `overall_dict`, we can simpily use the code
