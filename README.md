@@ -2,7 +2,7 @@
 **PRUDEX-Compass** is designed for systematic evaluation of FinRL methods with 6 axes and 16 measures.
 
 <div align="center">
-  <img src="https://github.com/ai-gamer/PRUDEX-Compass/blob/main/Compass/pictures/FInal_compass.png" width = 400 height = 400 />
+  <img src="Compass/pictures/final.svg" width = 400 height = 400 />
 </div>
 
 ## Install
@@ -40,7 +40,7 @@ $ python Compass/generate/compass/create_compass.py--data Compass/generate/compa
 A example CLEVA-Compass, generated with [`Compass/generate/compass/data.json`](https://github.com/ai-gamer/PRUDEX-Compass/blob/main/Compass/generate/compass/data.json).
 
 <div align="center">
-  <img src="https://github.com/TradeMaster-NTU/TradeMaster/blob/main/tutorial/visualization_data/PRUDEX.jpg" width = 500 height = 400 />
+  <img src="Compass/pictures/final.svg" width = 500 height = 400 />
 </div>
 
 ## JSON Data Format
