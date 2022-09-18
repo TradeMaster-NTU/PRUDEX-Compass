@@ -29,7 +29,7 @@ optional arguments:
 ```
 For this purpose we provide the blank file [`blank.tex`](https://github.com/ai-gamer/PRUDEX-Compass/blob/main/Compass/generate/compass/blank.tex).
 <div align="center">
-  <img src="https://github.com/TradeMaster-NTU/PRUDEX-Compass/tree/main/Compass/pictures/blank.PNG" width = 500 height = 400 />
+  <img src="https://github.com/TradeMaster-NTU/PRUDEX-Compass/tree/main/Compass/pictures/blank.png" width = 500 height = 400 />
 </div>
 
 ## Example Usage 
@@ -105,7 +105,7 @@ The resulting file [`filled.tex`](https://github.com/ai-gamer/PRUDEX-Compass/blo
         <td ><center><img src="Compass/pictures/octagon/SARL.svg" width = 180 height = 180 /> </center></td>
     </tr>
     <tr>
-     <td align="center"><center>(a) A2C</center></td><td align="center"><center>(b) PPO</center></td>      <td align="center"><center>(c) SAC</center></td> <td align="center"><center>(d) SARL</center></td><td align="center"><center>                  
+     <td align="center"><center>(a) A2C</center></td><td align="center"><center>(b) PPO</center></td><td align="center"><center>(c) SAC</center></td> <td align="center"><center>(d) SARL</center></td><td align="center"><center>                  
     </tr>
     <tr>
         <td ><center><img src="Compass/pictures/octagon/IMIT.svg" width = 180 height = 180 /> </center></td>
@@ -114,7 +114,7 @@ The resulting file [`filled.tex`](https://github.com/ai-gamer/PRUDEX-Compass/blo
         <td ><center><img src="Compass/pictures/octagon/AlphaMix.svg" width = 180 height = 180 />  </center></td>
     </tr>
     <tr>
-     <td align="center"><center>(e) IMIT</center></td><td align="center"><center>(f) DeepTrader</center></td><td align="center"><center>(g) EIIE</center></td>      <td align="center"><center>(h) AlphaMix+</center></td>                   
+     <td align="center"><center>(e) IMIT</center></td><td align="center"><center>(f) DeepTrader</center></td><td align="center"><center>(g) EIIE</center></td><td align="center"><center>(h) AlphaMix+</center></td>                   
     </tr>
 </table>
 
