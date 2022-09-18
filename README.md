@@ -2,7 +2,7 @@
 **PRUDEX-Compass** is designed for systematic evaluation of FinRL methods with 6 axes and 16 measures.
 
 <div align="center">
-  <img src="Compass/pictures/final.svg" width = 500 height = 500 />
+  <img src="Compass/pictures/final/final.svg" width = 500 height = 500 />
 </div>
 
 ## Install
@@ -29,7 +29,7 @@ optional arguments:
 ```
 For this purpose we provide the blank file [`blank.tex`](https://github.com/ai-gamer/PRUDEX-Compass/blob/main/Compass/generate/compass/blank.tex).
 <div align="center">
-  <img src="Compass/pictures/blank.svg" width = 500 height = 400 />
+  <img src="Compass/pictures/final/final.svg" width = 500 height = 400 />
 </div>
 
 ## Example Usage 
