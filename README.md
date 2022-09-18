@@ -29,7 +29,7 @@ optional arguments:
 ```
 For this purpose we provide the blank file [`blank.tex`](https://github.com/ai-gamer/PRUDEX-Compass/blob/main/Compass/generate/compass/blank.tex).
 <div align="center">
-  <img src="https://github.com/TradeMaster-NTU/PRUDEX-Compass/tree/main/Compass/pictures/blank.png" width = 500 height = 400 />
+  <img src="https://github.com/TradeMaster-NTU/PRUDEX-Compass/tree/main/Compass/pictures/blank.jpg" width = 500 height = 400 />
 </div>
 
 ## Example Usage 
