@@ -11,7 +11,7 @@ colors = [
 ]
 ```
 <div align="center">
-  <img src="../../pictures/overall(13).svg" width = 400 height =  />
+  <img src="https://anonymous.4open.science/r/PRUDEX-Compass-948C/Compass/pictures/overall(13).svg" width = 400 height =  />
 </div>
 
 For the second option, the `color` definition is  as followed.
@@ -19,5 +19,5 @@ For the second option, the `color` definition is  as followed.
 colors = sns.color_palette("Accent")
 ```
 <div align="center">
-  <img src="../../pictures/new_pp.svg" width = 400 height =  />
+  <img src="https://anonymous.4open.science/r/PRUDEX-Compass-948C/Compass/pictures/new_pp.svg" width = 400 height =  />
 </div>
