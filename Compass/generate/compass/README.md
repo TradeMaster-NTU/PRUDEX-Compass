@@ -18,7 +18,7 @@ $ python Compass/generate/compass/create_compass.py--data Compass/generate/compa
 ``` 
 to generate the following picture.
 <div align="center">
-  <img src="https://anonymous.4open.science/r/PRUDEX-Compass-68D5/Compass/pictures/final/old_color.svg" width = 500 height = 400 />
+  <img src="https://anonymous.4open.science/r/PRUDEX-Compass-948C/Compass/pictures/final/old_color.svg" width = 500 height = 400 />
 </div>
 or use the command 
 
@@ -27,5 +27,5 @@ $ python Compass/generate/compass/create_compass.py--data Compass/generate/compa
 ``` 
 to generate a more colorful picture
 <div align="center">
-  <img src="https://anonymous.4open.science/r/PRUDEX-Compass-68D5/Compass/pictures/final/new_color.svg" width = 500 height = 400 />
+  <img src="https://anonymous.4open.science/r/PRUDEX-Compass-948C/Compass/pictures/final/new_color.svg" width = 500 height = 400 />
 </div>
