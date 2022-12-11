@@ -94,7 +94,7 @@ The resulting file [`filled.tex`](https://anonymous.4open.science/r/PRUDEX-Compa
     \caption{PRUDEX-Compass}
 \end{figure}
 ```
-
+More details about configuration could be found [here](https://anonymous.4open.science/r/PRUDEX-Compass-68D5/Compass/generate/compass/README.md).
 ## PRIDE-Star
 - The PRIDE-Star is used to evaluate profitability,risk-control and diversity
 <table align="center">
@@ -167,7 +167,7 @@ make_distribution_plot(dict,algorithms,2000,xlabel,"./distribution",ATARI_100K_C
 ```
 to generate the distribution. Notice that we only use one metrics (total return in the example) to demonstrate the graph.
 
-For more precise information, please refer to [`Compass/generate/distribution/distribution.py`](https://anonymous.4open.science/r/PRUDEX-Compass-68D5/Compass/generate/distribution/distribution.py)
+For more precise information, please refer to [here]()
 
 ## Rank Distribution
 - The rank distribution plot is a bar plot, where the i-th column in the rank distribution shows the probability
