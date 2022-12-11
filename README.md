@@ -137,7 +137,7 @@ Here we provide a [blank tex](https://anonymous.4open.science/r/PRUDEX-Compass-9
 ## Performance Profile
 - The performance profile reports FinRL methods' score distribution of all runs across the differentfinancial markets that are statistically unbiased and more robust to outliers.
 <div align="center">
-  <img src="Compass/pictures/overall(13).svg" width = 400 height =  />
+  <img src="https://anonymous.4open.science/r/PRUDEX-Compass-948C/Compass/pictures/overall_13.svg" width = 400 height =  />
 </div>
 
 The key is to generate a dictionary whose key is the name of algorithms and the value is 2d array which represents different seeds and different task, then with the dictionary naming `overall_dict`, we can simpily use the code
