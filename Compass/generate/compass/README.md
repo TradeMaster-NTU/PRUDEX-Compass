@@ -14,18 +14,21 @@ optional arguments:
 ```
 You can use the command 
 ```
-$ python Compass/generate/compass/create_compass.py--data Compass/generate/compass/data.json
-``` 
-to generate the following picture.
-<div align="center">
-  <img src="https://anonymous.4open.science/r/PRUDEX-Compass-948C/Compass/pictures/final/old_color.svg" width = 500 height = 400 />
-</div>
-or use the command 
-
-```
 $ python Compass/generate/compass/create_compass.py--data Compass/generate/compass/data.json --template Compass/generate/compass/blank_color.tex
 ``` 
 to generate a more colorful picture
 <div align="center">
   <img src="https://anonymous.4open.science/r/PRUDEX-Compass-948C/Compass/pictures/final/new_color.svg" width = 500 height = 400 />
 </div>
+or use the command 
+
+```
+$ python Compass/generate/compass/create_compass.py--data Compass/generate/compass/data.json
+``` 
+to generate the following picture.
+<div align="center">
+  <img src="https://anonymous.4open.science/r/PRUDEX-Compass-948C/Compass/pictures/final/old_color.svg" width = 500 height = 400 />
+</div>
+
+
+
