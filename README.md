@@ -2,7 +2,7 @@
 **PRUDEX-Compass** is designed for systematic evaluation of FinRL methods with 6 axes and 16 measures.
 
 <div align="center">
-  <img src="https://github.com/ai-gamer/PRUDEX-Compass/blob/main/Compass/pictures/FInal_compass.png" width = 400 height = 400 />
+  <img src="https://anonymous.4open.science/r/PRUDEX-Compass-948C/Compass/pictures/final/final.svg" width = 500 height = 500 />
 </div>
 
 ## Install
@@ -14,7 +14,7 @@ pip install -r requirements.txt
 
 ## Creating PRUDEX-Compass Using the Python Script
 
-You can use the [`create_compass.py`](https://github.com/ai-gamer/PRUDEX-Compass/blob/main/Compass/generate/compass/create_compass.py) python script to generate a compass and specify how it is filled for each FinRL method in a JSON file:
+You can use the [`create_compass.py`](https://anonymous.4open.science/r/PRUDEX-Compass-948C/Compass/generate/compass/create_compass.py) python script to generate a compass and specify how it is filled for each FinRL method in a JSON file:
 ```
 $ python Compass/generate/compass/create_compass.py --h
 usage: create_compass.py [-h] [--template TEMPLATE] [--output OUTPUT] [--data DATA]
@@ -27,20 +27,20 @@ optional arguments:
   --output OUTPUT      Tikz filled output file. (default: Compass/generate/compass/filled.tex)
   --data DATA          Entries as JSON file. (default: Compass/generate/compass/data.json)
 ```
-For this purpose we provide the blank file [`blank.tex`](https://github.com/ai-gamer/PRUDEX-Compass/blob/main/Compass/generate/compass/blank.tex).
+For this purpose we provide the blank file [`blank.tex`](https://anonymous.4open.science/r/PRUDEX-Compass-948C/Compass/generate/compass/blank.tex).
 <div align="center">
-  <img src="https://github.com/ai-gamer/PRUDEX-Compass/blob/main/Compass/pictures/blankcompass.PNG" width = 500 height = 400 />
+  <img src="Compass/pictures/blank.svg" width = 500 height = 400 />
 </div>
 
 ## Example Usage 
-The default reads the template file from [`blank.tex`](https://github.com/ai-gamer/PRUDEX-Compass/blob/main/Compass/generate/compass/blank.tex) and writes the filled output file into [`filled.tex`](https://github.com/ai-gamer/PRUDEX-Compass/blob/main/Compass/generate/compass/filled.tex) with the data specified via --data <JSON_FILE>:
+The default reads the template file from [`blank.tex`](https://anonymous.4open.science/r/PRUDEX-Compass-948C/Compass/generate/compass/blank.tex) and writes the filled output file into [`filled.tex`](https://anonymous.4open.science/r/PRUDEX-Compass-948C/Compass/generate/compass/filled.tex) with the data specified via --data <JSON_FILE>:
 ```
 $ python Compass/generate/compass/create_compass.py--data Compass/generate/compass/data.json
 ```
-A example CLEVA-Compass, generated with [`Compass/generate/compass/data.json`](https://github.com/ai-gamer/PRUDEX-Compass/blob/main/Compass/generate/compass/data.json).
+A example CLEVA-Compass, generated with [`Compass/generate/compass/data.json`](https://anonymous.4open.science/r/PRUDEX-Compass-948C/Compass/generate/compass/data.json).
 
 <div align="center">
-  <img src="https://github.com/ai-gamer/PRUDEX-Compass/blob/main/Compass/pictures/FInal_compass.png" width = 400 height = 400 />
+  <img src="https://anonymous.4open.science/r/PRUDEX-Compass-948C/Compass/pictures/final/final.svg" width = 500 height = 400 />
 </div>
 
 ## JSON Data Format
@@ -85,34 +85,36 @@ Here a json file is given as an example:
           "profile": false,
           "equity_curve": false  }}]}
 ```
-and a more complicated example can be found in [`Compass/generate/compass/data.json`](https://github.com/ai-gamer/PRUDEX-Compass/blob/main/Compass/generate/compass/data.json)
+and a more complicated example can be found in [`Compass/generate/compass/data.json`](https://anonymous.4open.science/r/PRUDEX-Compass-948C/Compass/generate/compass/data.json)
 
-The resulting file [`filled.tex`](https://github.com/ai-gamer/PRUDEX-Compass/blob/main/Compass/generate/compass/filled.tex) can then be included into any LaTeX document, e.g.:
+The resulting file [`filled.tex`](https://anonymous.4open.science/r/PRUDEX-Compass-948C/Compass/generate/compass/filled.tex) can then be included into any LaTeX document, e.g.:
 ```
 \begin{figure}
     \input{filled.tex}
     \caption{PRUDEX-Compass}
 \end{figure}
 ```
-
+More details about configuration could be found [here](https://anonymous.4open.science/r/PRUDEX-Compass-948C/Compass/generate/compass/README.md).
 ## PRIDE-Star
 - The PRIDE-Star is used to evaluate profitability,risk-control and diversity
 <table align="center">
     <tr>
-        <td ><center><img src="Compass/pictures/octagon/A2C.svg" width = 220 height = 220 />   </center></td>
-        <td ><center><img src="Compass/pictures/octagon/PPO.svg" width = 220 height = 220 /> </center></td>
-        <td ><center><img src="Compass/pictures/octagon/SAC.svg" width = 220 height = 220 /> </center></td>
+        <td ><center><img src="Compass/pictures/octagon/A2C.svg" width = 180 height = 180 />   </center></td>
+        <td ><center><img src="Compass/pictures/octagon/PPO.svg" width = 180 height = 180 /> </center></td>
+        <td ><center><img src="Compass/pictures/octagon/SAC.svg" width = 180 height = 180 /> </center></td>
+        <td ><center><img src="Compass/pictures/octagon/SARL.svg" width = 180 height = 180 /> </center></td>
     </tr>
     <tr>
-     <td align="center"><center>(a) A2C</center></td><td align="center"><center>(b) PPO</center></td>      <td align="center"><center>(c) SAC</center></td>                   
+     <td align="center"><center>(a) A2C</center></td><td align="center"><center>(b) PPO</center></td><td align="center"><center>(c) SAC</center></td> <td align="center"><center>(d) SARL</center></td>               
     </tr>
     <tr>
-        <td ><center><img src="Compass/pictures/octagon/SARL.svg" width = 220 height = 220 /> </center></td>
-        <td ><center><img src="Compass/pictures/octagon/DeepTrader.svg" width = 220 height = 220 /> </center></td>
-        <td ><center><img src="Compass/pictures/octagon/AlphaMix.svg" width = 220 height = 220 />  </center></td>
+        <td ><center><img src="Compass/pictures/octagon/IMIT.svg" width = 180 height = 180 /> </center></td>
+        <td ><center><img src="Compass/pictures/octagon/DeepTrader.svg" width = 180 height = 180 /> </center></td>
+        <td ><center><img src="Compass/pictures/octagon/TD3.svg" width = 180 height = 180 /> </center></td>
+        <td ><center><img src="Compass/pictures/octagon/AlphaMix.svg" width = 180 height = 180 />  </center></td>
     </tr>
     <tr>
-     <td align="center"><center>(d) SARL</center></td><td align="center"><center>(e) DeepTrader</center></td>      <td align="center"><center>(f) AlphaMix+</center></td>                   
+     <td align="center"><center>(e) IMIT</center></td><td align="center"><center>(f) DeepTrader</center></td><td align="center"><center>(g) EIIE</center></td><td align="center"><center>(h) AlphaMix+</center></td>                   
     </tr>
 </table>
 
@@ -130,12 +132,12 @@ And here is the file structure for `PRIDE-Star`
     |-- SARL.tex
     |-- blank.tex
 ```
-Here we provide a [blank tex](https://github.com/ai-gamer/PRUDEX-Compass/blob/main/Compass/generate/PRIDE-Star/blank.tex) that you can play with, the blank tex does not have any color block but the hexagon and the outer ring, while the rest of tex generate the subpicture corresponding to the  shown above. You can also manipulate the color and the value for different algorithms to generate graphs.
+Here we provide a [blank tex](https://anonymous.4open.science/r/PRUDEX-Compass-948C/Compass/generate/PRIDE-Star/blank.tex) that you can play with, the blank tex does not have any color block but the hexagon and the outer ring, while the rest of tex generate the subpicture corresponding to the  shown above. You can also manipulate the color and the value for different algorithms to generate graphs.
 
 ## Performance Profile
 - The performance profile reports FinRL methods' score distribution of all runs across the differentfinancial markets that are statistically unbiased and more robust to outliers.
 <div align="center">
-  <img src="Compass/pictures/overall.svg" width = 400 height =  />
+  <img src="https://anonymous.4open.science/r/PRUDEX-Compass-948C/Compass/pictures/overall_13.svg" width = 400 height =  />
 </div>
 
 The key is to generate a dictionary whose key is the name of algorithms and the value is 2d array which represents different seeds and different task, then with the dictionary naming `overall_dict`, we can simpily use the code
@@ -165,7 +167,7 @@ make_distribution_plot(dict,algorithms,2000,xlabel,"./distribution",ATARI_100K_C
 ```
 to generate the distribution. Notice that we only use one metrics (total return in the example) to demonstrate the graph.
 
-For more precise information, please refer to [`Compass/generate/distribution/distribution.py`](https://github.com/ai-gamer/PRUDEX-Compass/blob/main/Compass/generate/distribution/distribution.py)
+For more precise information, please refer to [here](https://anonymous.4open.science/r/PRUDEX-Compass-948C/Compass/generate/distribution/README.md).
 
 ## Rank Distribution
 - The rank distribution plot is a bar plot, where the i-th column in the rank distribution shows the probability
@@ -193,12 +195,21 @@ make_rank_plot(algs,indicator_list,".rank.pdf",colors)
 ```
 to generate the graph.
 
-For more information, please refer to [`rank.py`](https://github.com/ai-gamer/PRUDEX-Compass/blob/main/Compass/generate/rank/rank.py)
+For more information, please refer to [`rank.py`](https://anonymous.4open.science/r/PRUDEX-Compass-948C/Compass/generate/rank/rank.py)
 ## Performance under Extreme Markets
 - The performance under extreme markets is also a bar plot, which reflects FinRL methods' ability to deal with black swan events in terms of total return and sharpe ratio compared with uniform policy.
-<div align="center">
-  <img src="Compass/pictures/crypto.svg" width = 400 height =  />
-</div> 
+<table align="center">
+    <tr>
+        <td ><center><img src="Compass/pictures/exen/crypto.svg" width = 250 height = 180 />   </center></td>
+        <td ><center><img src="Compass/pictures/exen/dj30(4).svg" width = 250 height = 180 /> </center></td>
+        <td ><center><img src="Compass/pictures/exen/sz50(25).svg" width = 250 height = 180 /> </center></td>
+    </tr>
+    <tr>
+     <td align="center"><center>(a) Crypto</center></td>
+     <td align="center"><center>(b) DJ30</center></td>
+     <td align="center"><center>(c) SZ50</center></td> 
+    </tr>
+</table>
 The key is to select a volatile period and get the daily return rate . Then we can simpliy use the code
 
 ```
@@ -213,9 +224,9 @@ path=".exen.pdf"
 plot_pictures(new_models,path)
 ```
 
-to generate the graph.
+to generate the first graph.
 
-For more information, please refer to [`exen.py`](https://github.com/ai-gamer/PRUDEX-Compass/blob/main/Compass/generate/exen/exen.py)
+For more information, please refer to [`exen.py`](https://anonymous.4open.science/r/PRUDEX-Compass-948C/Compass/generate/exen/exen.py)
 ## AlphaMix+
 AlphaMix+, a universal RL framework with diversified risk-aware Mixture-of-Experts(MoE) for quantitative trading.
 
@@ -247,7 +258,7 @@ python ./AlphaMix+_sz50.py --dataset dj30 --num_layer 4
 ```
 or any paramaters you want to change which is defined in the `parse_args` function.
 
-After traning, it will store the result under [`data`](https://github.com/ai-gamer/PRUDEX-Compass/tree/main/AlphaMix%2B/PM/data) whose structure is like
+After traning, it will store the result under [`data`](https://anonymous.4open.science/r/PRUDEX-Compass-948C/AlphaMix+/PM/data) whose structure is like
 ```
 |-- crypto
 |-- foreign_exchange
@@ -271,10 +282,10 @@ After traning, it will store the result under [`data`](https://github.com/ai-gam
 |-- sz50
 
 ```
-Under the [`portfolio_management/AlphaMix+`](https://github.com/ai-gamer/PRUDEX-Compass/tree/main/AlphaMix%2B/PM/data/portfolio_management/AlphaMix%2B), we can get the the name of our dataset under which lies the the name of model indicating its super-parameters under which lies the result for different seed which contains the overall result on the valid and test dataset in [`result.csv`](https://github.com/ai-gamer/PRUDEX-Compass/blob/main/AlphaMix%2B/PM/data/portfolio_management/AlphaMix%2B/sz50/en_3_batch_256_plr_0.0007_qlr_0.0007_layer_128_2_buffer_10000_discount_0.99_tem_20_bm_0.5_uncertain_0.5/seed_12345/result.csv) and more specifically, action and daily return for each epoch on the test set in [`test_daily_action_(number of epoch).npy`](https://github.com/ai-gamer/PRUDEX-Compass/blob/main/AlphaMix%2B/PM/data/portfolio_management/AlphaMix%2B/sz50/en_3_batch_256_plr_0.0007_qlr_0.0007_layer_128_2_buffer_10000_discount_0.99_tem_20_bm_0.5_uncertain_0.5/seed_12345/test_daily_action_0.npy) and [`test_daily_return_(number of epoch).csv`](https://github.com/ai-gamer/PRUDEX-Compass/blob/main/AlphaMix%2B/PM/data/portfolio_management/AlphaMix%2B/sz50/en_3_batch_256_plr_0.0007_qlr_0.0007_layer_128_2_buffer_10000_discount_0.99_tem_20_bm_0.5_uncertain_0.5/seed_12345/test_daily_return_0.csv).
+Under the [`portfolio_management/AlphaMix+`](https://anonymous.4open.science/r/PRUDEX-Compass-948C/AlphaMix+/PM/data/portfolio_management/AlphaMix+), we can get the the name of our dataset under which lies the the name of model indicating its super-parameters under which lies the result for different seed which contains the overall result on the valid and test dataset in [`result.csv`](https://anonymous.4open.science/r/PRUDEX-Compass-948C/AlphaMix+/PM/data/portfolio_management/AlphaMix+/sz50/en_3_batch_256_plr_0.0007_qlr_0.0007_layer_128_2_buffer_10000_discount_0.99_tem_20_bm_0.5_uncertain_0.5/seed_12345/result.csv) and more specifically, action and daily return for each epoch on the test set in [`test_daily_action_(number of epoch).npy`](https://anonymous.4open.science/r/PRUDEX-Compass-948C/AlphaMix+/PM/data/portfolio_management/AlphaMix+/sz50/en_3_batch_256_plr_0.0007_qlr_0.0007_layer_128_2_buffer_10000_discount_0.99_tem_20_bm_0.5_uncertain_0.5/seed_12345/test_daily_action_0.npy) and [`test_daily_return_(number of epoch).csv`](https://anonymous.4open.science/r/PRUDEX-Compass-948C/AlphaMix+/PM/data/portfolio_management/AlphaMix+/sz50/en_3_batch_256_plr_0.0007_qlr_0.0007_layer_128_2_buffer_10000_discount_0.99_tem_20_bm_0.5_uncertain_0.5/seed_12345/test_daily_return_0.csv).
 
 
-For users to pick the best model, we also add a [`sz50.ipynb`](https://github.com/ai-gamer/PRUDEX-Compass/blob/main/AlphaMix%2B/PM/data/portfolio_management/AlphaMix%2B/sz50.ipynb) in the example which help pick the best model, calculate a series of financial indicators, and summrize the result.
+For users to pick the best model, we also add a [`sz50.ipynb`](https://anonymous.4open.science/r/PRUDEX-Compass-948C/AlphaMix+/PM/data/portfolio_management/AlphaMix+/sz50.ipynb) in the example which help pick the best model, calculate a series of financial indicators, and summrize the result.
 
 ## Acknowledgements
 This repository is developed based on:

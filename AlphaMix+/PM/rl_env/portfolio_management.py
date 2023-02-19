@@ -571,7 +571,7 @@ def get_dataset_config(dataset):
 
 
     if dataset=='sz50':
-        df=pd.read_csv("AlphaMix+\PM\data\sz50\SZ50_raw.csv")#the location where the sz50 data is
+        df=retrivedata_from_csv("/home/sunshuo/qml/RL_Mix/PM/data/sz50/")#the location where the sz50 data is
         df=clean_sz50data(df)
         df=preprocess(df)
         train = data_split(df, '2012-09-04','2019-01-01')
@@ -584,7 +584,7 @@ def get_dataset_config(dataset):
 
 
     if dataset=='sz50_rolling1':
-        df=pd.read_csv("AlphaMix+\PM\data\sz50\SZ50_raw.csv")#the location where the sz50 data is
+        df=retrivedata_from_csv("/home/sunshuo/qml/RL_Mix/PM/data/sz50/")#the location where the sz50 data is
         df=clean_sz50data(df)
         df=preprocess(df)
         train = data_split(df, '2012-09-04','2018-01-01')
@@ -597,7 +597,7 @@ def get_dataset_config(dataset):
 
     
     if dataset=='sz50_rolling2':
-        df=pd.read_csv("AlphaMix+\PM\data\sz50\SZ50_raw.csv")#the location where the sz50 data is
+        df=retrivedata_from_csv("/home/sunshuo/qml/RL_Mix/PM/data/sz50/")#the location where the sz50 data is
         df=clean_sz50data(df)
         df=preprocess(df)
         train = data_split(df, '2012-09-04','2017-01-01')
