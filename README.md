@@ -288,7 +288,7 @@ Under the [`portfolio_management/AlphaMix+`](https://anonymous.4open.science/r/P
 For users to pick the best model, we also add a [`sz50.ipynb`](https://anonymous.4open.science/r/PRUDEX-Compass-948C/AlphaMix+/PM/data/portfolio_management/AlphaMix+/sz50.ipynb) in the example which help pick the best model, calculate a series of financial indicators, and summrize the result.
 
 ## Acknowledgements
-We would like to thank the template and code provided in [CLEVA-Compass](https://github.com/ml-research/CLEVA-Compass), the visualization design of PRUDEX-Compass is built based on it. In addition, this repository is also developed based on:
+We would like to thank the template and code provided in [CLEVA-Compass](https://github.com/ml-research/CLEVA-Compass), the visualization design of PRUDEX-Compass is inspired and built based on it. In addition, this repository is also developed based on:
 [RLKit](https://github.com/rail-berkeley/rlkit),
 [FinRL](https://github.com/AI4Finance-Foundation/FinRL),
 [Sunrise](https://github.com/pokaxpoka/sunrise)
