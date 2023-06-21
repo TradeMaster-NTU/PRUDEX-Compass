@@ -2,7 +2,7 @@
 **PRUDEX-Compass** is designed for systematic evaluation of FinRL methods with 6 axes and 16 measures.
 
 <div align="center">
-  <img src="https://anonymous.4open.science/r/PRUDEX-Compass-948C/Compass/pictures/final/final.svg" width = 500 height = 500 />
+  <img src="Compass/pictures/final/final.svg" width = 500 height = 500 />
 </div>
 
 ## Install
@@ -40,7 +40,7 @@ $ python Compass/generate/compass/create_compass.py--data Compass/generate/compa
 A example CLEVA-Compass, generated with [`Compass/generate/compass/data.json`](https://anonymous.4open.science/r/PRUDEX-Compass-948C/Compass/generate/compass/data.json).
 
 <div align="center">
-  <img src="https://anonymous.4open.science/r/PRUDEX-Compass-948C/Compass/pictures/final/final.svg" width = 500 height = 400 />
+  <img src="Compass/pictures/final/final.svg" width = 500 height = 400 />
 </div>
 
 ## JSON Data Format
